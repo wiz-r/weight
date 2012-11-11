@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
+#import "HomeViewController.h"
+#import "GraphViewController.h"
+#import "WeightData.h"
 
 @implementation AppDelegate
 
@@ -18,16 +18,30 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
+    UIViewController *viewController1;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPhone" bundle:nil];
-        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
+        viewController1 = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPhone" bundle:nil];
+        self.graphViewController = [[GraphViewController alloc] initWithNibName:@"GraphViewController_iPhone" bundle:nil];
     } else {
-        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPad" bundle:nil];
-        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
+        viewController1 = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPad" bundle:nil];
+        self.graphViewController = [[GraphViewController alloc] initWithNibName:@"GraphViewController_iPad" bundle:nil];
     }
+    
+    // Initial data
+    NSTimeInterval oneDay = 24.0f * 60.0f * 60.0f;
+    NSMutableArray* data = [[NSMutableArray alloc] init];
+    [data addObject:[[WeightData alloc] initWithWeight:72.0f :[NSDate dateWithTimeIntervalSinceNow:-6*oneDay]]];
+    [data addObject:[[WeightData alloc] initWithWeight:71.8f :[NSDate dateWithTimeIntervalSinceNow:-5*oneDay]]];
+    [data addObject:[[WeightData alloc] initWithWeight:72.4f :[NSDate dateWithTimeIntervalSinceNow:-4*oneDay]]];
+    [data addObject:[[WeightData alloc] initWithWeight:72.1f :[NSDate dateWithTimeIntervalSinceNow:-3*oneDay]]];
+    [data addObject:[[WeightData alloc] initWithWeight:71.8f :[NSDate dateWithTimeIntervalSinceNow:-2*oneDay]]];
+    [data addObject:[[WeightData alloc] initWithWeight:71.6f :[NSDate dateWithTimeIntervalSinceNow:-1*oneDay]]];
+    [data addObject:[[WeightData alloc] initWithWeight:71.5f :[NSDate dateWithTimeIntervalSinceNow:-0*oneDay]]];
+    self.graphViewController.data = data;
+    self.graphViewController.xDays = 7.0f;
+    
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[viewController1, self.graphViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
