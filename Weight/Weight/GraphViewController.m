@@ -52,17 +52,17 @@
     [self.graph applyTheme:theme];
     
     // padding
-    self.graph.paddingTop = 10.0;
-    self.graph.paddingBottom = 10.0;
-    self.graph.paddingLeft = 10.0;
-    self.graph.paddingRight = 10.0;
+    self.graph.paddingTop = 10.0f;
+    self.graph.paddingBottom = 10.0f;
+    self.graph.paddingLeft = 10.0f;
+    self.graph.paddingRight = 10.0f;
     
     // Plot Area
     self.graph.plotAreaFrame.borderLineStyle = nil;
-    self.graph.plotAreaFrame.paddingTop = 25.0;
-    self.graph.plotAreaFrame.paddingBottom = 35.0;
-    self.graph.plotAreaFrame.paddingLeft = 35.0;
-    self.graph.plotAreaFrame.paddingRight = 20.0;
+    self.graph.plotAreaFrame.paddingTop = 10.0f;
+    self.graph.plotAreaFrame.paddingBottom = 10.0f;
+    self.graph.plotAreaFrame.paddingLeft = 10.0f;
+    self.graph.plotAreaFrame.paddingRight = 10.0f;
     
     // Plot Space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
@@ -70,8 +70,8 @@
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
     CPTXYAxis *xAxis = axisSet.xAxis;
     CPTXYAxis *yAxis = axisSet.yAxis;
-    xAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:20.0];
-    yAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:20.0];
+    xAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:30.0];
+    yAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:30.0];
     
 	// X Axis
     self.refDate = [NSDate dateWithTimeIntervalSinceNow:-(self.xDays-1.0f) * oneDay];
