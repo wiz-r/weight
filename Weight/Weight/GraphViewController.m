@@ -57,22 +57,26 @@
     self.graph.paddingLeft = 10.0;
     self.graph.paddingRight = 10.0;
     
-    // plotArea
+    // Plot Area
     self.graph.plotAreaFrame.borderLineStyle = nil;
     self.graph.plotAreaFrame.paddingTop = 25.0;
     self.graph.plotAreaFrame.paddingBottom = 35.0;
     self.graph.plotAreaFrame.paddingLeft = 35.0;
     self.graph.plotAreaFrame.paddingRight = 20.0;
     
-    // X/Y Axis
+    // Plot Space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
+    plotSpace.allowsUserInteraction = YES;
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
+    CPTXYAxis *xAxis = axisSet.xAxis;
+    CPTXYAxis *yAxis = axisSet.yAxis;
+    xAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:20.0];
+    yAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:20.0];
     
 	// X Axis
     self.refDate = [NSDate dateWithTimeIntervalSinceNow:-(self.xDays-1.0f) * oneDay];
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(oneDay * 0.0f) length:CPTDecimalFromFloat(oneDay*self.xDays)];
-    
-    CPTXYAxis *xAxis = axisSet.xAxis;
+
     xAxis.majorIntervalLength = CPTDecimalFromFloat(self.xDays/7.0 * oneDay);
     xAxis.minorTicksPerInterval = 0;
     CPTMutableTextStyle* xLabelTextStyle = [CPTTextStyle textStyle];
@@ -81,7 +85,6 @@
     xLabelTextStyle.color = [CPTColor whiteColor];
     xAxis.labelTextStyle = xLabelTextStyle;
     xAxis.labelRotation = 0.5f;
-    xAxis.orthogonalCoordinateDecimal = CPTDecimalFromFloat(minY);
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd"];
@@ -91,10 +94,8 @@
     
     // Y Axis
     plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(minY) length:CPTDecimalFromFloat(maxY - minY)];
-    
-    CPTXYAxis *yAxis = axisSet.yAxis;
     yAxis.majorIntervalLength = CPTDecimalFromFloat(0.2f);
-    yAxis.minorTicksPerInterval = 3.0f;
+    yAxis.minorTicksPerInterval = 1.0f;
     
     // Scatter Plot
     CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
