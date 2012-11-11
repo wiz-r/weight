@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B040C218164F74EB0074BD25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C217164F74EB0074BD25 /* UIKit.framework */; };
+		B040C21A164F74EB0074BD25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C219164F74EB0074BD25 /* Foundation.framework */; };
+		B040C21C164F74EB0074BD25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C21B164F74EB0074BD25 /* CoreGraphics.framework */; };
+		B040C222164F74EB0074BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B040C220164F74EB0074BD25 /* InfoPlist.strings */; };
+		B040C224164F74EB0074BD25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C223164F74EB0074BD25 /* main.m */; };
+		B040C228164F74EB0074BD25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C227164F74EB0074BD25 /* AppDelegate.m */; };
+		B040C22A164F74EB0074BD25 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C229164F74EB0074BD25 /* Default.png */; };
+		B040C22C164F74EB0074BD25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C22B164F74EB0074BD25 /* Default@2x.png */; };
+		B040C22E164F74EB0074BD25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C22D164F74EB0074BD25 /* Default-568h@2x.png */; };
+		B040C231164F74EB0074BD25 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C230164F74EB0074BD25 /* FirstViewController.m */; };
+		B040C233164F74EB0074BD25 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C232164F74EB0074BD25 /* first.png */; };
+		B040C235164F74EB0074BD25 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C234164F74EB0074BD25 /* first@2x.png */; };
+		B040C238164F74EB0074BD25 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C237164F74EB0074BD25 /* SecondViewController.m */; };
+		B040C23A164F74EB0074BD25 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C239164F74EB0074BD25 /* second.png */; };
+		B040C23C164F74EB0074BD25 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C23B164F74EB0074BD25 /* second@2x.png */; };
+		B040C23F164F74EB0074BD25 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C23D164F74EB0074BD25 /* FirstViewController_iPhone.xib */; };
+		B040C242164F74EB0074BD25 /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C240164F74EB0074BD25 /* FirstViewController_iPad.xib */; };
+		B040C245164F74EB0074BD25 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C243164F74EB0074BD25 /* SecondViewController_iPhone.xib */; };
+		B040C248164F74EB0074BD25 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C246164F74EB0074BD25 /* SecondViewController_iPad.xib */; };
+		B040C250164F74EC0074BD25 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C24F164F74EC0074BD25 /* SenTestingKit.framework */; };
+		B040C251164F74EC0074BD25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C217164F74EB0074BD25 /* UIKit.framework */; };
+		B040C252164F74EC0074BD25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C219164F74EB0074BD25 /* Foundation.framework */; };
+		B040C25A164F74EC0074BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B040C258164F74EC0074BD25 /* InfoPlist.strings */; };
+		B040C25D164F74EC0074BD25 /* WeightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C25C164F74EC0074BD25 /* WeightTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B040C253164F74EC0074BD25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B040C20A164F74EB0074BD25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B040C212164F74EB0074BD25;
+			remoteInfo = Weight;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B040C213164F74EB0074BD25 /* Weight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B040C217164F74EB0074BD25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B040C219164F74EB0074BD25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B040C21B164F74EB0074BD25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B040C21F164F74EB0074BD25 /* Weight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Weight-Info.plist"; sourceTree = "<group>"; };
+		B040C221164F74EB0074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B040C223164F74EB0074BD25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B040C225164F74EB0074BD25 /* Weight-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weight-Prefix.pch"; sourceTree = "<group>"; };
+		B040C226164F74EB0074BD25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B040C227164F74EB0074BD25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B040C229164F74EB0074BD25 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B040C22B164F74EB0074BD25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B040C22D164F74EB0074BD25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B040C22F164F74EB0074BD25 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		B040C230164F74EB0074BD25 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		B040C232164F74EB0074BD25 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		B040C234164F74EB0074BD25 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		B040C236164F74EB0074BD25 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		B040C237164F74EB0074BD25 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		B040C239164F74EB0074BD25 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		B040C23B164F74EB0074BD25 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		B040C23E164F74EB0074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		B040C241164F74EB0074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = "<group>"; };
+		B040C244164F74EB0074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		B040C247164F74EB0074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		B040C24E164F74EC0074BD25 /* WeightTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B040C24F164F74EC0074BD25 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B040C257164F74EC0074BD25 /* WeightTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeightTests-Info.plist"; sourceTree = "<group>"; };
+		B040C259164F74EC0074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B040C25B164F74EC0074BD25 /* WeightTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightTests.h; sourceTree = "<group>"; };
+		B040C25C164F74EC0074BD25 /* WeightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B040C210164F74EB0074BD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B040C218164F74EB0074BD25 /* UIKit.framework in Frameworks */,
+				B040C21A164F74EB0074BD25 /* Foundation.framework in Frameworks */,
+				B040C21C164F74EB0074BD25 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B040C24A164F74EC0074BD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B040C250164F74EC0074BD25 /* SenTestingKit.framework in Frameworks */,
+				B040C251164F74EC0074BD25 /* UIKit.framework in Frameworks */,
+				B040C252164F74EC0074BD25 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B040C208164F74EB0074BD25 = {
+			isa = PBXGroup;
+			children = (
+				B040C21D164F74EB0074BD25 /* Weight */,
+				B040C255164F74EC0074BD25 /* WeightTests */,
+				B040C216164F74EB0074BD25 /* Frameworks */,
+				B040C214164F74EB0074BD25 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B040C214164F74EB0074BD25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B040C213164F74EB0074BD25 /* Weight.app */,
+				B040C24E164F74EC0074BD25 /* WeightTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B040C216164F74EB0074BD25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B040C217164F74EB0074BD25 /* UIKit.framework */,
+				B040C219164F74EB0074BD25 /* Foundation.framework */,
+				B040C21B164F74EB0074BD25 /* CoreGraphics.framework */,
+				B040C24F164F74EC0074BD25 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B040C21D164F74EB0074BD25 /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				B040C226164F74EB0074BD25 /* AppDelegate.h */,
+				B040C227164F74EB0074BD25 /* AppDelegate.m */,
+				B040C22F164F74EB0074BD25 /* FirstViewController.h */,
+				B040C230164F74EB0074BD25 /* FirstViewController.m */,
+				B040C232164F74EB0074BD25 /* first.png */,
+				B040C234164F74EB0074BD25 /* first@2x.png */,
+				B040C236164F74EB0074BD25 /* SecondViewController.h */,
+				B040C237164F74EB0074BD25 /* SecondViewController.m */,
+				B040C239164F74EB0074BD25 /* second.png */,
+				B040C23B164F74EB0074BD25 /* second@2x.png */,
+				B040C23D164F74EB0074BD25 /* FirstViewController_iPhone.xib */,
+				B040C240164F74EB0074BD25 /* FirstViewController_iPad.xib */,
+				B040C243164F74EB0074BD25 /* SecondViewController_iPhone.xib */,
+				B040C246164F74EB0074BD25 /* SecondViewController_iPad.xib */,
+				B040C21E164F74EB0074BD25 /* Supporting Files */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
+		B040C21E164F74EB0074BD25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B040C21F164F74EB0074BD25 /* Weight-Info.plist */,
+				B040C220164F74EB0074BD25 /* InfoPlist.strings */,
+				B040C223164F74EB0074BD25 /* main.m */,
+				B040C225164F74EB0074BD25 /* Weight-Prefix.pch */,
+				B040C229164F74EB0074BD25 /* Default.png */,
+				B040C22B164F74EB0074BD25 /* Default@2x.png */,
+				B040C22D164F74EB0074BD25 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B040C255164F74EC0074BD25 /* WeightTests */ = {
+			isa = PBXGroup;
+			children = (
+				B040C25B164F74EC0074BD25 /* WeightTests.h */,
+				B040C25C164F74EC0074BD25 /* WeightTests.m */,
+				B040C256164F74EC0074BD25 /* Supporting Files */,
+			);
+			path = WeightTests;
+			sourceTree = "<group>";
+		};
+		B040C256164F74EC0074BD25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B040C257164F74EC0074BD25 /* WeightTests-Info.plist */,
+				B040C258164F74EC0074BD25 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B040C212164F74EB0074BD25 /* Weight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B040C260164F74EC0074BD25 /* Build configuration list for PBXNativeTarget "Weight" */;
+			buildPhases = (
+				B040C20F164F74EB0074BD25 /* Sources */,
+				B040C210164F74EB0074BD25 /* Frameworks */,
+				B040C211164F74EB0074BD25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Weight;
+			productName = Weight;
+			productReference = B040C213164F74EB0074BD25 /* Weight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B040C24D164F74EC0074BD25 /* WeightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B040C263164F74EC0074BD25 /* Build configuration list for PBXNativeTarget "WeightTests" */;
+			buildPhases = (
+				B040C249164F74EC0074BD25 /* Sources */,
+				B040C24A164F74EC0074BD25 /* Frameworks */,
+				B040C24B164F74EC0074BD25 /* Resources */,
+				B040C24C164F74EC0074BD25 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B040C254164F74EC0074BD25 /* PBXTargetDependency */,
+			);
+			name = WeightTests;
+			productName = WeightTests;
+			productReference = B040C24E164F74EC0074BD25 /* WeightTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B040C20A164F74EB0074BD25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = takuya;
+			};
+			buildConfigurationList = B040C20D164F74EB0074BD25 /* Build configuration list for PBXProject "Weight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B040C208164F74EB0074BD25;
+			productRefGroup = B040C214164F74EB0074BD25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B040C212164F74EB0074BD25 /* Weight */,
+				B040C24D164F74EC0074BD25 /* WeightTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B040C211164F74EB0074BD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B040C222164F74EB0074BD25 /* InfoPlist.strings in Resources */,
+				B040C22A164F74EB0074BD25 /* Default.png in Resources */,
+				B040C22C164F74EB0074BD25 /* Default@2x.png in Resources */,
+				B040C22E164F74EB0074BD25 /* Default-568h@2x.png in Resources */,
+				B040C233164F74EB0074BD25 /* first.png in Resources */,
+				B040C235164F74EB0074BD25 /* first@2x.png in Resources */,
+				B040C23A164F74EB0074BD25 /* second.png in Resources */,
+				B040C23C164F74EB0074BD25 /* second@2x.png in Resources */,
+				B040C23F164F74EB0074BD25 /* FirstViewController_iPhone.xib in Resources */,
+				B040C242164F74EB0074BD25 /* FirstViewController_iPad.xib in Resources */,
+				B040C245164F74EB0074BD25 /* SecondViewController_iPhone.xib in Resources */,
+				B040C248164F74EB0074BD25 /* SecondViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B040C24B164F74EC0074BD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B040C25A164F74EC0074BD25 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B040C24C164F74EC0074BD25 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B040C20F164F74EB0074BD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B040C224164F74EB0074BD25 /* main.m in Sources */,
+				B040C228164F74EB0074BD25 /* AppDelegate.m in Sources */,
+				B040C231164F74EB0074BD25 /* FirstViewController.m in Sources */,
+				B040C238164F74EB0074BD25 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B040C249164F74EC0074BD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B040C25D164F74EC0074BD25 /* WeightTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B040C254164F74EC0074BD25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B040C212164F74EB0074BD25 /* Weight */;
+			targetProxy = B040C253164F74EC0074BD25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B040C220164F74EB0074BD25 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B040C221164F74EB0074BD25 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B040C23D164F74EB0074BD25 /* FirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B040C23E164F74EB0074BD25 /* en */,
+			);
+			name = FirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B040C240164F74EB0074BD25 /* FirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B040C241164F74EB0074BD25 /* en */,
+			);
+			name = FirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B040C243164F74EB0074BD25 /* SecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B040C244164F74EB0074BD25 /* en */,
+			);
+			name = SecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B040C246164F74EB0074BD25 /* SecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B040C247164F74EB0074BD25 /* en */,
+			);
+			name = SecondViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B040C258164F74EC0074BD25 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B040C259164F74EC0074BD25 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B040C25E164F74EC0074BD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B040C25F164F74EC0074BD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B040C261164F74EC0074BD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Weight/Weight-Prefix.pch";
+				INFOPLIST_FILE = "Weight/Weight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B040C262164F74EC0074BD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Weight/Weight-Prefix.pch";
+				INFOPLIST_FILE = "Weight/Weight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B040C264164F74EC0074BD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weight.app/Weight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Weight/Weight-Prefix.pch";
+				INFOPLIST_FILE = "WeightTests/WeightTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B040C265164F74EC0074BD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weight.app/Weight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Weight/Weight-Prefix.pch";
+				INFOPLIST_FILE = "WeightTests/WeightTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B040C20D164F74EB0074BD25 /* Build configuration list for PBXProject "Weight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B040C25E164F74EC0074BD25 /* Debug */,
+				B040C25F164F74EC0074BD25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B040C260164F74EC0074BD25 /* Build configuration list for PBXNativeTarget "Weight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B040C261164F74EC0074BD25 /* Debug */,
+				B040C262164F74EC0074BD25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B040C263164F74EC0074BD25 /* Build configuration list for PBXNativeTarget "WeightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B040C264164F74EC0074BD25 /* Debug */,
+				B040C265164F74EC0074BD25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B040C20A164F74EB0074BD25 /* Project object */;
+}
