@@ -7,9 +7,11 @@
 //
 
 #import "HomeViewController.h"
+#import "InputViewController.h"
 
 @interface HomeViewController ()
 
+- (IBAction)inputButtonPushed:(id)sender;
 @end
 
 @implementation HomeViewController
@@ -36,4 +38,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)inputButtonPushed:(id)sender {
+    UIViewController *inputViewController = [[InputViewController alloc] initWithNibName:@"InputViewController" bundle:nil];
+    [self presentViewController:inputViewController animated:YES completion:^{
+        ;
+    }];
+}
 @end

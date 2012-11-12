@@ -11,6 +11,8 @@
 
 @interface GraphViewController ()
 @property (retain, nonatomic) CPTXYGraph* graph;
+@property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphView;
 @property (retain, nonatomic) NSDate* refDate;
 @end
 
@@ -28,6 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // background color
+    self.menuView.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
+    self.view.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
     
     // data
     NSTimeInterval oneDay = 24.0f * 60.0f * 60.0f;
@@ -52,7 +58,7 @@
     [self.graph applyTheme:theme];
     
     // padding
-    self.graph.paddingTop = 10.0f;
+    self.graph.paddingTop = 0.0f;
     self.graph.paddingBottom = 10.0f;
     self.graph.paddingLeft = 10.0f;
     self.graph.paddingRight = 10.0f;
@@ -121,7 +127,7 @@
     [self.graph addPlot:dataSourceLinePlot];
     
     // graph view
-    CPTGraphHostingView* hostingView = (CPTGraphHostingView*)self.view;
+    CPTGraphHostingView* hostingView = (CPTGraphHostingView*)self.graphView;
     hostingView.collapsesLayers = NO;
     hostingView.hostedGraph = self.graph;
 }
