@@ -12,6 +12,7 @@
 - (IBAction)datePickerChanged:(id)sender;
 - (IBAction)cancelButtonPushed:(id)sender;
 - (IBAction)dateButtonPushed:(id)sender;
+- (IBAction)okButtonPushed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 - (IBAction)closeSoftwareKeyboard:(id)sender;
@@ -45,6 +46,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSDate* today = [NSDate date];
+    [self.datePicker setDate:today];
+    [self.dateButton setTitle:[self pickDate] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,10 +58,7 @@
 }
 
 - (IBAction)datePickerChanged:(id)sender {
-    NSDate* date = self.datePicker.date;
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY/MM/dd"];
-    [self.dateButton setTitle:[formatter stringFromDate:date] forState:UIControlStateNormal];
+    [self.dateButton setTitle:[self pickDate] forState:UIControlStateNormal];
 }
 
 - (IBAction)cancelButtonPushed:(id)sender {
@@ -69,9 +70,23 @@
 - (IBAction)dateButtonPushed:(id)sender {
     [self.textField resignFirstResponder];
 }
+
+- (IBAction)okButtonPushed:(id)sender {
+    NSString* weight = self.textField.text;
+    if ([weight length] == 0) return; // ignore button pushed
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"hoge" message:[NSString stringWithFormat:@"date:%@ / weight:%@", [self pickDate], weight] delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"ok", nil];
+    [alert show];
+}
+
 - (IBAction)closeSoftwareKeyboard:(id)sender {
     [self.textField resignFirstResponder];
 }
-- (IBAction)cancel:(id)sender {
+
+- (NSString*)pickDate {
+    NSDate* date = self.datePicker.date;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY/MM/dd"];
+    return [formatter stringFromDate:date];
 }
 @end
