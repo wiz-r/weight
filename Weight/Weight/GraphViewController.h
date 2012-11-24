@@ -10,6 +10,6 @@
 #import "CorePlot-CocoaTouch.h"
 
 @interface GraphViewController : UIViewController <CPTPlotDataSource>
-@property (retain, nonatomic) NSMutableArray* data;
+@property (retain, nonatomic) NSArray* data;
 @property (assign, nonatomic) float xDays;
 @end

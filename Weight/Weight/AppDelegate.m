@@ -10,7 +10,7 @@
 
 #import "HomeViewController.h"
 #import "GraphViewController.h"
-#import "WeightData.h"
+#import "WeightCollection.h"
 
 @implementation AppDelegate
 
@@ -28,15 +28,7 @@
     }
     
     // Initial data
-    NSTimeInterval oneDay = 24.0f * 60.0f * 60.0f;
-    NSMutableArray* data = [[NSMutableArray alloc] init];
-    [data addObject:[[WeightData alloc] initWithWeight:72.0f :[NSDate dateWithTimeIntervalSinceNow:-6*oneDay]]];
-    [data addObject:[[WeightData alloc] initWithWeight:71.8f :[NSDate dateWithTimeIntervalSinceNow:-5*oneDay]]];
-    [data addObject:[[WeightData alloc] initWithWeight:72.4f :[NSDate dateWithTimeIntervalSinceNow:-4*oneDay]]];
-    [data addObject:[[WeightData alloc] initWithWeight:72.1f :[NSDate dateWithTimeIntervalSinceNow:-3*oneDay]]];
-    [data addObject:[[WeightData alloc] initWithWeight:71.8f :[NSDate dateWithTimeIntervalSinceNow:-2*oneDay]]];
-    [data addObject:[[WeightData alloc] initWithWeight:71.6f :[NSDate dateWithTimeIntervalSinceNow:-1*oneDay]]];
-    [data addObject:[[WeightData alloc] initWithWeight:71.5f :[NSDate dateWithTimeIntervalSinceNow:-0*oneDay]]];
+    NSArray* data = [[[WeightCollection alloc] init] array];
     self.graphViewController.data = data;
     self.graphViewController.xDays = 7.0f;
     

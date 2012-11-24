@@ -18,4 +18,17 @@
     
     return self;
 }
+
+-(NSString*) keyForDic
+{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:WEIGHT_DATE_FORMAT];
+    NSString* key = [formatter stringFromDate:self.date];
+    return key;
+}
+
+-(NSString*) valueForDic
+{
+    return [NSString stringWithFormat:@"%f", self.weight];
+}
 @end

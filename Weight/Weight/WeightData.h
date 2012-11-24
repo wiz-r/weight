@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#define WEIGHT_DATE_FORMAT @"yyyy/MM/dd"
 
 @interface WeightData : NSObject
 @property (assign, nonatomic) float weight;
 @property (retain, nonatomic) NSDate* date;
 
 -(id) initWithWeight:(float)weight :(NSDate*)date;
+-(NSString*) keyForDic;
+-(NSString*) valueForDic;
 @end

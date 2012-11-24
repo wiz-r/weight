@@ -7,6 +7,7 @@
 //
 
 #import "InputViewController.h"
+#import "WeightCollection.h"
 
 @interface InputViewController ()
 - (IBAction)datePickerChanged:(id)sender;
@@ -74,9 +75,15 @@
 - (IBAction)okButtonPushed:(id)sender {
     NSString* weight = self.textField.text;
     if ([weight length] == 0) return; // ignore button pushed
+        
+    WeightData* data = [[WeightData alloc] initWithWeight:[weight floatValue] :self.datePicker.date];
+    WeightCollection* collection = [[WeightCollection alloc] init];
+    [collection add:data];
+    [collection save];
     
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"hoge" message:[NSString stringWithFormat:@"date:%@ / weight:%@", [self pickDate], weight] delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"ok", nil];
-    [alert show];
+    [self dismissViewControllerAnimated:YES completion:^{
+        ;
+    }];
 }
 
 - (IBAction)closeSoftwareKeyboard:(id)sender {
@@ -86,7 +93,7 @@
 - (NSString*)pickDate {
     NSDate* date = self.datePicker.date;
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY/MM/dd"];
+    [formatter setDateFormat:WEIGHT_DATE_FORMAT];
     return [formatter stringFromDate:date];
 }
 @end
