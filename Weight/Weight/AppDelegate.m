@@ -11,6 +11,7 @@
 #import "HomeViewController.h"
 #import "GraphViewController.h"
 #import "WeightCollection.h"
+#import "SettingViewController.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPhone" bundle:nil];
     self.graphViewController = [[GraphViewController alloc] initWithNibName:@"GraphViewController_iPhone" bundle:nil];
+    self.settingViewController = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     
     // Initial data
     NSArray* data = [[[WeightCollection alloc] init] array];
@@ -27,7 +29,7 @@
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.delegate = self;
-    self.tabBarController.viewControllers = @[self.homeViewController, self.graphViewController];
+    self.tabBarController.viewControllers = @[self.homeViewController, self.graphViewController, self.settingViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

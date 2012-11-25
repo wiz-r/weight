@@ -17,6 +17,8 @@
 		6563476F1653DD6300B91B82 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6563476E1653DD6300B91B82 /* MessageUI.framework */; };
 		656347711653DD6E00B91B82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656347701653DD6E00B91B82 /* SystemConfiguration.framework */; };
 		6569633E165D919D0068B690 /* WeightCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569633D165D919C0068B690 /* WeightCollection.m */; };
+		659BBBEF1662126E0049A9AF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BBBED1662126E0049A9AF /* SettingViewController.m */; };
+		659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BBBEE1662126E0049A9AF /* SettingViewController.xib */; };
 		B040C2DA164F9E2F0074BD25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2D9164F9E2F0074BD25 /* UIKit.framework */; };
 		B040C2DC164F9E2F0074BD25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2DB164F9E2F0074BD25 /* Foundation.framework */; };
 		B040C2DE164F9E2F0074BD25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2DD164F9E2F0074BD25 /* CoreGraphics.framework */; };
@@ -76,6 +78,9 @@
 		656347701653DD6E00B91B82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6569633C165D919C0068B690 /* WeightCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightCollection.h; sourceTree = "<group>"; };
 		6569633D165D919C0068B690 /* WeightCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightCollection.m; sourceTree = "<group>"; };
+		659BBBEC1662126E0049A9AF /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		659BBBED1662126E0049A9AF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		659BBBEE1662126E0049A9AF /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		B040C2D5164F9E2F0074BD25 /* Weight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B040C2D9164F9E2F0074BD25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B040C2DB164F9E2F0074BD25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -300,6 +305,9 @@
 				B040C329164F9F740074BD25 /* WeightData.m */,
 				6569633C165D919C0068B690 /* WeightCollection.h */,
 				6569633D165D919C0068B690 /* WeightCollection.m */,
+				659BBBEC1662126E0049A9AF /* SettingViewController.h */,
+				659BBBED1662126E0049A9AF /* SettingViewController.m */,
+				659BBBEE1662126E0049A9AF /* SettingViewController.xib */,
 				B040C2E0164F9E2F0074BD25 /* Supporting Files */,
 			);
 			path = Weight;
@@ -516,6 +524,7 @@
 				B040C307164F9E300074BD25 /* GraphViewController_iPhone.xib in Resources */,
 				654E939A165130ED00CD32CE /* InputViewController.xib in Resources */,
 				656347631653DC1B00B91B82 /* README.txt in Resources */,
+				659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +566,7 @@
 				B040C32A164F9F740074BD25 /* WeightData.m in Sources */,
 				654E9399165130ED00CD32CE /* InputViewController.m in Sources */,
 				6569633E165D919D0068B690 /* WeightCollection.m in Sources */,
+				659BBBEF1662126E0049A9AF /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

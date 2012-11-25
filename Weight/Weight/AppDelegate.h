@@ -15,5 +15,6 @@
 @property (strong, nonatomic) UITabBarController *tabBarController;
 @property (strong, nonatomic) GraphViewController *graphViewController;
 @property (strong, nonatomic) UIViewController *homeViewController;
+@property (strong, nonatomic) UIViewController *settingViewController;
 
 @end
