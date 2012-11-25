@@ -12,4 +12,5 @@
 @interface GraphViewController : UIViewController <CPTPlotDataSource>
 @property (retain, nonatomic) NSArray* data;
 @property (assign, nonatomic) float xDays;
+-(void)drawGraph;
 @end

@@ -30,7 +30,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self drawGraph];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -
+#pragma mark Plot Data Source Methods
+-(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
+	return self.data.count;
+}
+
+-(NSNumber *)numberForPlot:(CPTPlot *)plot
+					 field:(NSUInteger)fieldEnum
+			   recordIndex:(NSUInteger)index
+{
+    WeightData* data = [self.data objectAtIndex:index];
+	if(fieldEnum == CPTScatterPlotFieldX)
+	{
+        float diffWithRefDate = [data.date timeIntervalSinceDate:self.refDate];
+        return [NSNumber numberWithFloat:diffWithRefDate];
+    }
+	else
+	{
+        return [NSNumber numberWithFloat:data.weight];
+	}
+}
+
+-(void)drawGraph
+{
     // background color
     self.menuView.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
     self.view.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
@@ -80,9 +112,12 @@
     yAxis.axisConstraints = [CPTConstraints constraintWithLowerOffset:30.0];
     
 	// X Axis
-    self.refDate = [NSDate dateWithTimeIntervalSinceNow:-(self.xDays-1.0f) * oneDay];
+    NSDateFormatter* refDateFormattter = [[NSDateFormatter alloc] init];
+    [refDateFormattter setDateFormat:WEIGHT_DATE_FORMAT];
+    NSDate* today = [refDateFormattter dateFromString:[refDateFormattter stringFromDate:[NSDate date]]];
+    self.refDate = [NSDate dateWithTimeInterval:-(self.xDays-1.0f) * oneDay sinceDate:today];
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(oneDay * 0.0f) length:CPTDecimalFromFloat(oneDay*self.xDays)];
-
+    
     xAxis.majorIntervalLength = CPTDecimalFromFloat(self.xDays/7.0 * oneDay);
     xAxis.minorTicksPerInterval = 0;
     CPTMutableTextStyle* xLabelTextStyle = [CPTTextStyle textStyle];
@@ -130,34 +165,6 @@
     CPTGraphHostingView* hostingView = (CPTGraphHostingView*)self.graphView;
     hostingView.collapsesLayers = NO;
     hostingView.hostedGraph = self.graph;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark -
-#pragma mark Plot Data Source Methods
--(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
-	return self.data.count;
-}
-
--(NSNumber *)numberForPlot:(CPTPlot *)plot
-					 field:(NSUInteger)fieldEnum
-			   recordIndex:(NSUInteger)index
-{
-    WeightData* data = [self.data objectAtIndex:index];
-	if(fieldEnum == CPTScatterPlotFieldX)
-	{
-        float diffWithRefDate = [data.date timeIntervalSinceDate:self.refDate];
-        return [NSNumber numberWithFloat:diffWithRefDate];
-    }
-	else
-	{
-        return [NSNumber numberWithFloat:data.weight];
-	}
 }
 
 @end

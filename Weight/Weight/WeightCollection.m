@@ -13,10 +13,6 @@
 -(WeightCollection*)init
 {
     if((self=[super init])) {
-        self.dictionary = [NSMutableDictionary dictionary];
-        NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-        [ud registerDefaults:self.dictionary];
-        
         [self load];
     }
     
@@ -34,9 +30,6 @@
 -(void) add:(WeightData*) weight
 {
     [self.dictionary setObject:[weight valueForDic] forKey:[weight keyForDic]];
-    for (id key in [self.dictionary allKeys]) {
-        NSLog(@"key:%@", (NSString*)key);
-    }
 }
 
 -(NSArray*) array
@@ -62,10 +55,6 @@
 -(void) save
 {
     NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-    NSLog(@"hi:%@", @"save");
-    for (id key in [self.dictionary allKeys]) {
-        NSLog(@"s-key:%@", (NSString*)key);
-    }
     [ud setObject:self.dictionary forKey:UD_COLLECTION_DATA_KEY];
     [ud synchronize];
 }
@@ -74,11 +63,11 @@
 {
     NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
     NSDictionary* dict = [ud dictionaryForKey:UD_COLLECTION_DATA_KEY];
-    NSLog(@"hi:%@", @"load");
-    for (id key in [dict allKeys]) {
-        NSLog(@"d-key:%@", (NSString*)key);
+    if ([dict count] == 0) {
+        self.dictionary = [NSMutableDictionary dictionary];
+    } else {
+        self.dictionary = [dict mutableCopy];
     }
-    self.dictionary = [dict mutableCopy];
 }
 
 @end

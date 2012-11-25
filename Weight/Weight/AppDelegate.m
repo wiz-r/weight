@@ -18,12 +18,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPhone" bundle:nil];
+        self.homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPhone" bundle:nil];
         self.graphViewController = [[GraphViewController alloc] initWithNibName:@"GraphViewController_iPhone" bundle:nil];
     } else {
-        viewController1 = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPad" bundle:nil];
+        self.homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPad" bundle:nil];
         self.graphViewController = [[GraphViewController alloc] initWithNibName:@"GraphViewController_iPad" bundle:nil];
     }
     
@@ -33,7 +32,8 @@
     self.graphViewController.xDays = 7.0f;
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, self.graphViewController];
+    self.tabBarController.delegate = self;
+    self.tabBarController.viewControllers = @[self.homeViewController, self.graphViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -66,12 +66,16 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
+
 // Optional UITabBarControllerDelegate method.
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
+    if ([viewController isKindOfClass:[GraphViewController class]]) {
+        NSArray* data = [[[WeightCollection alloc] init] array];
+        self.graphViewController.data = data;
+        [self.graphViewController drawGraph];
+    }
 }
-*/
 
 /*
 // Optional UITabBarControllerDelegate method.
