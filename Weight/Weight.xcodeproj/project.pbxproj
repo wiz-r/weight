@@ -33,9 +33,7 @@
 		B040C2FC164F9E300074BD25 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2FB164F9E300074BD25 /* second.png */; };
 		B040C2FE164F9E300074BD25 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2FD164F9E300074BD25 /* second@2x.png */; };
 		B040C301164F9E300074BD25 /* HomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C2FF164F9E300074BD25 /* HomeViewController_iPhone.xib */; };
-		B040C304164F9E300074BD25 /* HomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C302164F9E300074BD25 /* HomeViewController_iPad.xib */; };
 		B040C307164F9E300074BD25 /* GraphViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C305164F9E300074BD25 /* GraphViewController_iPhone.xib */; };
-		B040C30A164F9E300074BD25 /* GraphViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C308164F9E300074BD25 /* GraphViewController_iPad.xib */; };
 		B040C312164F9E310074BD25 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C311164F9E310074BD25 /* SenTestingKit.framework */; };
 		B040C313164F9E310074BD25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2D9164F9E2F0074BD25 /* UIKit.framework */; };
 		B040C314164F9E310074BD25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2DB164F9E2F0074BD25 /* Foundation.framework */; };
@@ -100,9 +98,7 @@
 		B040C2FB164F9E300074BD25 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B040C2FD164F9E300074BD25 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B040C300164F9E300074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPhone.xib; sourceTree = "<group>"; };
-		B040C303164F9E300074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPad.xib; sourceTree = "<group>"; };
 		B040C306164F9E300074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GraphViewController_iPhone.xib; sourceTree = "<group>"; };
-		B040C309164F9E300074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GraphViewController_iPad.xib; sourceTree = "<group>"; };
 		B040C310164F9E310074BD25 /* WeightTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B040C311164F9E310074BD25 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B040C319164F9E310074BD25 /* WeightTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeightTests-Info.plist"; sourceTree = "<group>"; };
@@ -299,9 +295,7 @@
 				B040C2FB164F9E300074BD25 /* second.png */,
 				B040C2FD164F9E300074BD25 /* second@2x.png */,
 				B040C2FF164F9E300074BD25 /* HomeViewController_iPhone.xib */,
-				B040C302164F9E300074BD25 /* HomeViewController_iPad.xib */,
 				B040C305164F9E300074BD25 /* GraphViewController_iPhone.xib */,
-				B040C308164F9E300074BD25 /* GraphViewController_iPad.xib */,
 				B040C328164F9F740074BD25 /* WeightData.h */,
 				B040C329164F9F740074BD25 /* WeightData.m */,
 				6569633C165D919C0068B690 /* WeightCollection.h */,
@@ -519,9 +513,7 @@
 				B040C2FC164F9E300074BD25 /* second.png in Resources */,
 				B040C2FE164F9E300074BD25 /* second@2x.png in Resources */,
 				B040C301164F9E300074BD25 /* HomeViewController_iPhone.xib in Resources */,
-				B040C304164F9E300074BD25 /* HomeViewController_iPad.xib in Resources */,
 				B040C307164F9E300074BD25 /* GraphViewController_iPhone.xib in Resources */,
-				B040C30A164F9E300074BD25 /* GraphViewController_iPad.xib in Resources */,
 				654E939A165130ED00CD32CE /* InputViewController.xib in Resources */,
 				656347631653DC1B00B91B82 /* README.txt in Resources */,
 			);
@@ -603,28 +595,12 @@
 			name = HomeViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		B040C302164F9E300074BD25 /* HomeViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B040C303164F9E300074BD25 /* en */,
-			);
-			name = HomeViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 		B040C305164F9E300074BD25 /* GraphViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B040C306164F9E300074BD25 /* en */,
 			);
 			name = GraphViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		B040C308164F9E300074BD25 /* GraphViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B040C309164F9E300074BD25 /* en */,
-			);
-			name = GraphViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		B040C31A164F9E310074BD25 /* InfoPlist.strings */ = {
