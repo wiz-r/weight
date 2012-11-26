@@ -7,8 +7,10 @@
 //
 
 #import "SettingViewController.h"
+#import "AlermCell.h"
 
 @interface SettingViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -36,4 +38,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSections
+{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Setting";
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AlermCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell == nil) {     
+        UIViewController* controller;
+        controller = [[UIViewController alloc] initWithNibName:@"AlermCellView" bundle:nil];
+        cell = (AlermCell*)controller.view;
+    }
+    return cell;
+}
 @end
