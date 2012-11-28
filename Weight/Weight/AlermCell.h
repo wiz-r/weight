@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AlermCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UISwitch *toggleButton;
 
 @end

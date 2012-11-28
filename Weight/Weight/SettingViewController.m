@@ -22,6 +22,9 @@
     if (self) {
         self.title = NSLocalizedString(@"Setting", @"Setting");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        
+        NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(alermNotificationReceived:) name:@"Alerm" object:nil];
     }
     return self;
 }
@@ -61,5 +64,16 @@
         cell = (AlermCell*)controller.view;
     }
     return cell;
+}
+
+-(void)alermNotificationReceived:(NSNotification*)center{
+    [center userInfo];
+    NSNumber* value = [[center userInfo] objectForKey:@"on"];
+    BOOL on = [value boolValue];
+    if (on) {
+        NSLog(@"on");
+    } else {
+        NSLog(@"off");
+    }
 }
 @end

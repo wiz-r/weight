@@ -10,7 +10,10 @@
 
 @implementation AlermCell
 - (IBAction)alermSettingChanged:(id)sender {
-    // TODO : NSNotificationCenter
+    BOOL on = self.toggleButton.on;
+    NSDictionary* dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:on] forKey:@"on"];
+    NSNotification* n = [NSNotification notificationWithName:@"Alerm" object:self userInfo:dic];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
