@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+- (IBAction)buttonPushed:(id)sender;
+- (IBAction)clearPushed:(id)sender;
 
 @end
 
@@ -37,12 +39,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   
+   /*
     if ([self.textField canBecomeFirstResponder])
     {
         [self.textField becomeFirstResponder];
     }
     self.textField.returnKeyType = UIReturnKeyDone;
+    */
 }
 - (void)viewDidLoad
 {
@@ -95,5 +98,15 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:WEIGHT_DATE_FORMAT];
     return [formatter stringFromDate:date];
+}
+
+- (IBAction)buttonPushed:(id)sender {
+    UIButton* button = (UIButton*)sender;
+    NSString* label = button.titleLabel.text;
+    self.textField.text = [NSString stringWithFormat:@"%@%@", self.textField.text, label];
+}
+
+- (IBAction)clearPushed:(id)sender {
+    self.textField.text = @"";
 }
 @end
