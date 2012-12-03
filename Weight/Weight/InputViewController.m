@@ -19,9 +19,10 @@
 - (IBAction)closeSoftwareKeyboard:(id)sender;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (weak, nonatomic) IBOutlet UIView *pickerView;
 - (IBAction)buttonPushed:(id)sender;
 - (IBAction)clearPushed:(id)sender;
+- (IBAction)pickerClosePushed:(id)sender;
 
 @end
 
@@ -39,6 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.pickerView.hidden = YES;
    /*
     if ([self.textField canBecomeFirstResponder])
     {
@@ -72,7 +74,7 @@
 }
 
 - (IBAction)dateButtonPushed:(id)sender {
-    [self.textField resignFirstResponder];
+    self.pickerView.hidden = !self.pickerView.hidden;
 }
 
 - (IBAction)okButtonPushed:(id)sender {
@@ -108,5 +110,9 @@
 
 - (IBAction)clearPushed:(id)sender {
     self.textField.text = @"";
+}
+
+- (IBAction)pickerClosePushed:(id)sender {
+    self.pickerView.hidden = YES;
 }
 @end
