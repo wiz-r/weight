@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#define ALERM_SETING_NOTIFICATION_NAME @"AlarmSetting"
 
-@interface AlermCell : UITableViewCell
+@interface AlarmCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UISwitch *toggleButton;
-
+-(void)switchValue:(BOOL)on;
 @end

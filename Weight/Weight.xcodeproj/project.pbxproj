@@ -19,7 +19,7 @@
 		6569633E165D919D0068B690 /* WeightCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569633D165D919C0068B690 /* WeightCollection.m */; };
 		659BBBEF1662126E0049A9AF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BBBED1662126E0049A9AF /* SettingViewController.m */; };
 		659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BBBEE1662126E0049A9AF /* SettingViewController.xib */; };
-		65DEF5EE1663C9ED00AB5521 /* AlermCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEF5ED1663C9ED00AB5521 /* AlermCell.m */; };
+		65DEF5EE1663C9ED00AB5521 /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEF5ED1663C9ED00AB5521 /* AlarmCell.m */; };
 		65DEF5F71663D2AF00AB5521 /* AlermCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */; };
 		B00283011672F9380099DA82 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B00282FF1672F9380099DA82 /* libChartboost.a */; };
 		B00283021672F9380099DA82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B00283001672F9380099DA82 /* README.md */; };
@@ -48,6 +48,7 @@
 		B040C32A164F9F740074BD25 /* WeightData.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C329164F9F740074BD25 /* WeightData.m */; };
 		B040C37D164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C37C164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a */; };
 		B040C37F164FA0570074BD25 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C37E164FA0570074BD25 /* QuartzCore.framework */; };
+		B0B800201673473A007DFA6C /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8001F1673473A007DFA6C /* Setting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +86,8 @@
 		659BBBEC1662126E0049A9AF /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		659BBBED1662126E0049A9AF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		659BBBEE1662126E0049A9AF /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
-		65DEF5EC1663C9ED00AB5521 /* AlermCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlermCell.h; sourceTree = "<group>"; };
-		65DEF5ED1663C9ED00AB5521 /* AlermCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlermCell.m; sourceTree = "<group>"; };
+		65DEF5EC1663C9ED00AB5521 /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
+		65DEF5ED1663C9ED00AB5521 /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
 		65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlermCellView.xib; sourceTree = "<group>"; };
 		B00282FD1672F9380099DA82 /* CBAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAnalytics.h; sourceTree = "<group>"; };
 		B00282FE1672F9380099DA82 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
@@ -204,6 +205,8 @@
 		B040C37B164F9FDF0074BD25 /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		B040C37C164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		B040C37E164FA0570074BD25 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B0B8001E1673473A007DFA6C /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
+		B0B8001F1673473A007DFA6C /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,9 +335,11 @@
 				659BBBEC1662126E0049A9AF /* SettingViewController.h */,
 				659BBBED1662126E0049A9AF /* SettingViewController.m */,
 				659BBBEE1662126E0049A9AF /* SettingViewController.xib */,
-				65DEF5EC1663C9ED00AB5521 /* AlermCell.h */,
-				65DEF5ED1663C9ED00AB5521 /* AlermCell.m */,
+				65DEF5EC1663C9ED00AB5521 /* AlarmCell.h */,
+				65DEF5ED1663C9ED00AB5521 /* AlarmCell.m */,
 				65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */,
+				B0B8001E1673473A007DFA6C /* Setting.h */,
+				B0B8001F1673473A007DFA6C /* Setting.m */,
 				B040C2E0164F9E2F0074BD25 /* Supporting Files */,
 			);
 			path = Weight;
@@ -596,7 +601,8 @@
 				654E9399165130ED00CD32CE /* InputViewController.m in Sources */,
 				6569633E165D919D0068B690 /* WeightCollection.m in Sources */,
 				659BBBEF1662126E0049A9AF /* SettingViewController.m in Sources */,
-				65DEF5EE1663C9ED00AB5521 /* AlermCell.m in Sources */,
+				65DEF5EE1663C9ED00AB5521 /* AlarmCell.m in Sources */,
+				B0B800201673473A007DFA6C /* Setting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
