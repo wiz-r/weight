@@ -21,6 +21,8 @@
 		659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BBBEE1662126E0049A9AF /* SettingViewController.xib */; };
 		65DEF5EE1663C9ED00AB5521 /* AlermCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEF5ED1663C9ED00AB5521 /* AlermCell.m */; };
 		65DEF5F71663D2AF00AB5521 /* AlermCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */; };
+		B00283011672F9380099DA82 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B00282FF1672F9380099DA82 /* libChartboost.a */; };
+		B00283021672F9380099DA82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B00283001672F9380099DA82 /* README.md */; };
 		B040C2DA164F9E2F0074BD25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2D9164F9E2F0074BD25 /* UIKit.framework */; };
 		B040C2DC164F9E2F0074BD25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2DB164F9E2F0074BD25 /* Foundation.framework */; };
 		B040C2DE164F9E2F0074BD25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C2DD164F9E2F0074BD25 /* CoreGraphics.framework */; };
@@ -86,6 +88,10 @@
 		65DEF5EC1663C9ED00AB5521 /* AlermCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlermCell.h; sourceTree = "<group>"; };
 		65DEF5ED1663C9ED00AB5521 /* AlermCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlermCell.m; sourceTree = "<group>"; };
 		65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlermCellView.xib; sourceTree = "<group>"; };
+		B00282FD1672F9380099DA82 /* CBAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAnalytics.h; sourceTree = "<group>"; };
+		B00282FE1672F9380099DA82 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
+		B00282FF1672F9380099DA82 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
+		B00283001672F9380099DA82 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B040C2D5164F9E2F0074BD25 /* Weight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B040C2D9164F9E2F0074BD25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B040C2DB164F9E2F0074BD25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -216,6 +222,7 @@
 				B040C2DC164F9E2F0074BD25 /* Foundation.framework in Frameworks */,
 				B040C37D164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				656347621653DC1B00B91B82 /* libGoogleAdMobAds.a in Frameworks */,
+				B00283011672F9380099DA82 /* libChartboost.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +257,21 @@
 			path = "GoogleAdMobAdsSdkiOS-6.2.1";
 			sourceTree = "<group>";
 		};
+		B00282FC1672F9380099DA82 /* Chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				B00282FD1672F9380099DA82 /* CBAnalytics.h */,
+				B00282FE1672F9380099DA82 /* Chartboost.h */,
+				B00282FF1672F9380099DA82 /* libChartboost.a */,
+				B00283001672F9380099DA82 /* README.md */,
+			);
+			path = Chartboost;
+			sourceTree = "<group>";
+		};
 		B040C2CA164F9E2F0074BD25 = {
 			isa = PBXGroup;
 			children = (
+				B00282FC1672F9380099DA82 /* Chartboost */,
 				656346CB1653DC1B00B91B82 /* GoogleAdMobAdsSdkiOS-6.2.1 */,
 				B040C32B164F9FDF0074BD25 /* CorePlot */,
 				B040C2DF164F9E2F0074BD25 /* Weight */,
@@ -534,6 +553,7 @@
 				656347631653DC1B00B91B82 /* README.txt in Resources */,
 				659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */,
 				65DEF5F71663D2AF00AB5521 /* AlermCellView.xib in Resources */,
+				B00283021672F9380099DA82 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +718,7 @@
 					"\"$(SRCROOT)/CorePlot\"",
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1/Add-ons/GoogleAnalyticsiOS_2.0beta3/Library\"",
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1\"",
+					"\"$(SRCROOT)/Chartboost\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -720,6 +741,7 @@
 					"\"$(SRCROOT)/CorePlot\"",
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1/Add-ons/GoogleAnalyticsiOS_2.0beta3/Library\"",
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1\"",
+					"\"$(SRCROOT)/Chartboost\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

@@ -12,6 +12,7 @@
 #import "GraphViewController.h"
 #import "WeightCollection.h"
 #import "SettingViewController.h"
+#import "Chartboost.h"
 
 @implementation AppDelegate
 
@@ -54,7 +55,11 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    Chartboost *cb = [Chartboost sharedChartboost];
+    cb.appId = @"50c2c2da17ba47c54f000002";
+    cb.appSignature = @"95a65217245e29793b2b9f7ed5d3a310e9bcf246";
+    [cb startSession];
+    [cb showInterstitial];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
