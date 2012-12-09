@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define INPUT_CLOSE_NOTIFICATION_NAME @"input_close"
+
 @interface InputViewController : UIViewController
 
 @end

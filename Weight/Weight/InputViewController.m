@@ -87,7 +87,7 @@
     [collection save];
     
     [self dismissViewControllerAnimated:YES completion:^{
-        ;
+        [self emitCloseEvent];
     }];
 }
 
@@ -114,5 +114,11 @@
 
 - (IBAction)pickerClosePushed:(id)sender {
     self.pickerView.hidden = YES;
+}
+
+- (void) emitCloseEvent
+{
+    NSNotification* n = [NSNotification notificationWithName:INPUT_CLOSE_NOTIFICATION_NAME object:self];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
 }
 @end

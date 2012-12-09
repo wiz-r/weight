@@ -12,6 +12,7 @@
 #import "GraphViewController.h"
 #import "WeightCollection.h"
 #import "SettingViewController.h"
+#import "InputViewController.h"
 #import "Chartboost.h"
 #import "Setting.h"
 
@@ -34,6 +35,10 @@
     self.tabBarController.viewControllers = @[self.homeViewController, self.graphViewController, self.settingViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(inputViewClosedEventReceived:) name:INPUT_CLOSE_NOTIFICATION_NAME object:nil];
+    
     return YES;
 }
 
@@ -84,6 +89,15 @@
     cb.appSignature = @"95a65217245e29793b2b9f7ed5d3a310e9bcf246";
     [cb startSession];
     [cb showInterstitial];
+}
+
+-(void)inputViewClosedEventReceived:(NSNotification*)center{
+    if ([self.tabBarController.selectedViewController isKindOfClass:[HomeViewController class]]) {
+        NSArray* data = [[[WeightCollection alloc] init] array];
+        self.graphViewController.data = data;
+        [self.graphViewController drawGraph];
+        self.tabBarController.selectedViewController = self.graphViewController;
+    }
 }
 
 /*
