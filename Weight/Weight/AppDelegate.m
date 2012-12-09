@@ -13,13 +13,17 @@
 #import "WeightCollection.h"
 #import "SettingViewController.h"
 #import "InputViewController.h"
-#import "Chartboost.h"
 #import "Setting.h"
+
+#import "Chartboost.h"
+#import "Flurry.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Flurry startSession:@"D5S79JRK4DNKT3MHVQXS"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPhone" bundle:nil];
     self.graphViewController = [[GraphViewController alloc] initWithNibName:@"GraphViewController_iPhone" bundle:nil];

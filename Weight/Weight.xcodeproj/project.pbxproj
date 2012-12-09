@@ -50,6 +50,7 @@
 		B05FC46216746A3E0082F59F /* graph@2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC45E16746A3E0082F59F /* graph@2.png */; };
 		B05FC46316746A3E0082F59F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC45F16746A3E0082F59F /* home.png */; };
 		B05FC46416746A3E0082F59F /* home@2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC46016746A3E0082F59F /* home@2.png */; };
+		B05FC46816747F6D0082F59F /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B05FC46716747F6D0082F59F /* libFlurry.a */; };
 		B0B800201673473A007DFA6C /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8001F1673473A007DFA6C /* Setting.m */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +210,8 @@
 		B05FC45E16746A3E0082F59F /* graph@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph@2.png"; sourceTree = "<group>"; };
 		B05FC45F16746A3E0082F59F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		B05FC46016746A3E0082F59F /* home@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2.png"; sourceTree = "<group>"; };
+		B05FC46616747F6D0082F59F /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		B05FC46716747F6D0082F59F /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		B0B8001E1673473A007DFA6C /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		B0B8001F1673473A007DFA6C /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,6 +233,7 @@
 				B040C37D164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				656347621653DC1B00B91B82 /* libGoogleAdMobAds.a in Frameworks */,
 				B00283011672F9380099DA82 /* libChartboost.a in Frameworks */,
+				B05FC46816747F6D0082F59F /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +282,7 @@
 		B040C2CA164F9E2F0074BD25 = {
 			isa = PBXGroup;
 			children = (
+				B05FC46516747F6C0082F59F /* Flurry */,
 				B05FC457167469050082F59F /* images */,
 				B00282FC1672F9380099DA82 /* Chartboost */,
 				656346CB1653DC1B00B91B82 /* GoogleAdMobAdsSdkiOS-6.2.1 */,
@@ -485,6 +490,15 @@
 				B05FC459167469050082F59F /* settings@2.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		B05FC46516747F6C0082F59F /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				B05FC46616747F6D0082F59F /* Flurry.h */,
+				B05FC46716747F6D0082F59F /* libFlurry.a */,
+			);
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -741,6 +755,7 @@
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1/Add-ons/GoogleAnalyticsiOS_2.0beta3/Library\"",
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1\"",
 					"\"$(SRCROOT)/Chartboost\"",
+					"\"$(SRCROOT)/Flurry\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -764,6 +779,7 @@
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1/Add-ons/GoogleAnalyticsiOS_2.0beta3/Library\"",
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1\"",
 					"\"$(SRCROOT)/Chartboost\"",
+					"\"$(SRCROOT)/Flurry\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
