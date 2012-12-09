@@ -92,10 +92,11 @@
 }
 
 -(void)inputViewClosedEventReceived:(NSNotification*)center{
+    NSArray* data = [[[WeightCollection alloc] init] array];
+    self.graphViewController.data = data;
+    [self.graphViewController drawGraph];
+    
     if ([self.tabBarController.selectedViewController isKindOfClass:[HomeViewController class]]) {
-        NSArray* data = [[[WeightCollection alloc] init] array];
-        self.graphViewController.data = data;
-        [self.graphViewController drawGraph];
         self.tabBarController.selectedViewController = self.graphViewController;
     }
 }

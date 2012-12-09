@@ -8,12 +8,16 @@
 
 #import "GraphViewController.h"
 #import "WeightData.h"
+#import "InputViewController.h"
 
 @interface GraphViewController ()
 @property (retain, nonatomic) CPTXYGraph* graph;
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *scaleBar;
 @property (retain, nonatomic) NSDate* refDate;
+- (IBAction)inputButtonPushed:(id)sender;
+- (IBAction)scaleButtonChanged:(id)sender;
 @end
 
 @implementation GraphViewController
@@ -167,4 +171,20 @@
     hostingView.hostedGraph = self.graph;
 }
 
+- (IBAction)inputButtonPushed:(id)sender {
+    UIViewController *inputViewController = [[InputViewController alloc] initWithNibName:@"InputViewController" bundle:nil];
+    [self presentViewController:inputViewController animated:YES completion:^{
+        ;
+    }];
+}
+
+- (IBAction)scaleButtonChanged:(id)sender {
+    NSInteger index = self.scaleBar.selectedSegmentIndex;
+    if (index == 0) {
+        self.xDays = 7.0f;
+    } else {
+        self.xDays = 30.0f;
+    }
+    [self drawGraph];
+}
 @end
