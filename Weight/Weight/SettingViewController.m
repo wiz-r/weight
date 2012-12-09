@@ -83,10 +83,12 @@
     NSNumber* value = [[center userInfo] objectForKey:@"on"];
     BOOL on = [value boolValue];
     [self.setting setValue:[NSNumber numberWithBool:on] forKey:SETTING_USE_ALARM];
+    [self.setting setAlarmNotification];
 }
 - (IBAction)dateChanged:(id)sender {
     NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:SETTING_VIEW_DATE_FORMAT];
     [self.setting setValue:[dateFormat stringFromDate:self.datePicker.date] forKey:SETTING_ALARM_DATE];
+    [self.setting setAlarmNotification];
 }
 @end

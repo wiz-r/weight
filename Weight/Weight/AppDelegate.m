@@ -13,6 +13,7 @@
 #import "WeightCollection.h"
 #import "SettingViewController.h"
 #import "Chartboost.h"
+#import "Setting.h"
 
 @implementation AppDelegate
 
@@ -55,11 +56,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    Chartboost *cb = [Chartboost sharedChartboost];
-    cb.appId = @"50c2c2da17ba47c54f000002";
-    cb.appSignature = @"95a65217245e29793b2b9f7ed5d3a310e9bcf246";
-    [cb startSession];
-    [cb showInterstitial];
+    [self initializeChartboost];
+    Setting* setting = [[Setting alloc] init];
+    [setting setAlarmNotification];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -76,6 +75,15 @@
         self.graphViewController.data = data;
         [self.graphViewController drawGraph];
     }
+}
+
+- (void)initializeChartboost
+{
+    Chartboost *cb = [Chartboost sharedChartboost];
+    cb.appId = @"50c2c2da17ba47c54f000002";
+    cb.appSignature = @"95a65217245e29793b2b9f7ed5d3a310e9bcf246";
+    [cb startSession];
+    [cb showInterstitial];
 }
 
 /*

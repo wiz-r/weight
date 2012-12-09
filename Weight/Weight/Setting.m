@@ -61,4 +61,40 @@
     [self.dictionary setObject:value forKey:key];
     [self save];
 }
+
+- (void)setAlarmNotification
+{
+    BOOL useAlarm = [(NSNumber*)[self valueForKey:SETTING_USE_ALARM] boolValue];
+    if (useAlarm) {
+        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"HH:mm"];
+        NSDate* settingDate = [dateFormat dateFromString:[self valueForKey:SETTING_ALARM_DATE]];
+        NSDate* today = [NSDate date];
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        NSDateComponents* settingComp = [calendar components:NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:settingDate];
+        NSDateComponents* todayComp = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit fromDate:today];
+        NSDateComponents* fireComp = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSHourCalendarUnit|NSDayCalendarUnit|NSMinuteCalendarUnit fromDate:today];
+        [fireComp setYear:todayComp.year];
+        [fireComp setMonth:todayComp.month];
+        [fireComp setDay:todayComp.day];
+        [fireComp setHour:settingComp.hour];
+        [fireComp setMinute:settingComp.minute];
+        
+        NSDate* fireDate = [calendar dateFromComponents:fireComp];
+        
+        UILocalNotification* notification = [[UILocalNotification alloc] init];
+        if (notification == nil) return;
+        notification.fireDate = fireDate;
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.repeatInterval = NSDayCalendarUnit;
+        notification.alertBody = @"It's time to measure your weight for your better life";
+        notification.alertAction = @"View Details";
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        notification.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    } else {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+}
 @end

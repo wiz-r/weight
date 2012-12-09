@@ -15,4 +15,5 @@
 -(Setting*) init;
 -(id) valueForKey: (id) key;
 -(void) setValue: (id)value forKey:(id) key;
+-(void) setAlarmNotification;
 @end
