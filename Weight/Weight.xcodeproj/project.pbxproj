@@ -33,11 +33,7 @@
 		B040C2EE164F9E2F0074BD25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2ED164F9E2F0074BD25 /* Default@2x.png */; };
 		B040C2F0164F9E2F0074BD25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2EF164F9E2F0074BD25 /* Default-568h@2x.png */; };
 		B040C2F3164F9E300074BD25 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C2F2164F9E300074BD25 /* HomeViewController.m */; };
-		B040C2F5164F9E300074BD25 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2F4164F9E300074BD25 /* first.png */; };
-		B040C2F7164F9E300074BD25 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2F6164F9E300074BD25 /* first@2x.png */; };
 		B040C2FA164F9E300074BD25 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C2F9164F9E300074BD25 /* GraphViewController.m */; };
-		B040C2FC164F9E300074BD25 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2FB164F9E300074BD25 /* second.png */; };
-		B040C2FE164F9E300074BD25 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B040C2FD164F9E300074BD25 /* second@2x.png */; };
 		B040C301164F9E300074BD25 /* HomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C2FF164F9E300074BD25 /* HomeViewController_iPhone.xib */; };
 		B040C307164F9E300074BD25 /* GraphViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B040C305164F9E300074BD25 /* GraphViewController_iPhone.xib */; };
 		B040C312164F9E310074BD25 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C311164F9E310074BD25 /* SenTestingKit.framework */; };
@@ -48,6 +44,12 @@
 		B040C32A164F9F740074BD25 /* WeightData.m in Sources */ = {isa = PBXBuildFile; fileRef = B040C329164F9F740074BD25 /* WeightData.m */; };
 		B040C37D164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C37C164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a */; };
 		B040C37F164FA0570074BD25 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B040C37E164FA0570074BD25 /* QuartzCore.framework */; };
+		B05FC45A167469050082F59F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC458167469050082F59F /* settings.png */; };
+		B05FC45B167469050082F59F /* settings@2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC459167469050082F59F /* settings@2.png */; };
+		B05FC46116746A3E0082F59F /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC45D16746A3E0082F59F /* graph.png */; };
+		B05FC46216746A3E0082F59F /* graph@2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC45E16746A3E0082F59F /* graph@2.png */; };
+		B05FC46316746A3E0082F59F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC45F16746A3E0082F59F /* home.png */; };
+		B05FC46416746A3E0082F59F /* home@2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC46016746A3E0082F59F /* home@2.png */; };
 		B0B800201673473A007DFA6C /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8001F1673473A007DFA6C /* Setting.m */; };
 /* End PBXBuildFile section */
 
@@ -108,12 +110,8 @@
 		B040C2EF164F9E2F0074BD25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B040C2F1164F9E300074BD25 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B040C2F2164F9E300074BD25 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		B040C2F4164F9E300074BD25 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		B040C2F6164F9E300074BD25 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		B040C2F8164F9E300074BD25 /* GraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		B040C2F9164F9E300074BD25 /* GraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
-		B040C2FB164F9E300074BD25 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		B040C2FD164F9E300074BD25 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B040C300164F9E300074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPhone.xib; sourceTree = "<group>"; };
 		B040C306164F9E300074BD25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GraphViewController_iPhone.xib; sourceTree = "<group>"; };
 		B040C310164F9E310074BD25 /* WeightTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +203,12 @@
 		B040C37B164F9FDF0074BD25 /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		B040C37C164F9FDF0074BD25 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		B040C37E164FA0570074BD25 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B05FC458167469050082F59F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		B05FC459167469050082F59F /* settings@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2.png"; sourceTree = "<group>"; };
+		B05FC45D16746A3E0082F59F /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
+		B05FC45E16746A3E0082F59F /* graph@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph@2.png"; sourceTree = "<group>"; };
+		B05FC45F16746A3E0082F59F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		B05FC46016746A3E0082F59F /* home@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2.png"; sourceTree = "<group>"; };
 		B0B8001E1673473A007DFA6C /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		B0B8001F1673473A007DFA6C /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +278,7 @@
 		B040C2CA164F9E2F0074BD25 = {
 			isa = PBXGroup;
 			children = (
+				B05FC457167469050082F59F /* images */,
 				B00282FC1672F9380099DA82 /* Chartboost */,
 				656346CB1653DC1B00B91B82 /* GoogleAdMobAdsSdkiOS-6.2.1 */,
 				B040C32B164F9FDF0074BD25 /* CorePlot */,
@@ -320,12 +325,8 @@
 				654E9396165130ED00CD32CE /* InputViewController.h */,
 				654E9397165130ED00CD32CE /* InputViewController.m */,
 				654E9398165130ED00CD32CE /* InputViewController.xib */,
-				B040C2F4164F9E300074BD25 /* first.png */,
-				B040C2F6164F9E300074BD25 /* first@2x.png */,
 				B040C2F8164F9E300074BD25 /* GraphViewController.h */,
 				B040C2F9164F9E300074BD25 /* GraphViewController.m */,
-				B040C2FB164F9E300074BD25 /* second.png */,
-				B040C2FD164F9E300074BD25 /* second@2x.png */,
 				B040C2FF164F9E300074BD25 /* HomeViewController_iPhone.xib */,
 				B040C305164F9E300074BD25 /* GraphViewController_iPhone.xib */,
 				B040C328164F9F740074BD25 /* WeightData.h */,
@@ -473,6 +474,19 @@
 			path = CorePlotHeaders;
 			sourceTree = "<group>";
 		};
+		B05FC457167469050082F59F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B05FC45D16746A3E0082F59F /* graph.png */,
+				B05FC45E16746A3E0082F59F /* graph@2.png */,
+				B05FC45F16746A3E0082F59F /* home.png */,
+				B05FC46016746A3E0082F59F /* home@2.png */,
+				B05FC458167469050082F59F /* settings.png */,
+				B05FC459167469050082F59F /* settings@2.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -548,10 +562,6 @@
 				B040C2EC164F9E2F0074BD25 /* Default.png in Resources */,
 				B040C2EE164F9E2F0074BD25 /* Default@2x.png in Resources */,
 				B040C2F0164F9E2F0074BD25 /* Default-568h@2x.png in Resources */,
-				B040C2F5164F9E300074BD25 /* first.png in Resources */,
-				B040C2F7164F9E300074BD25 /* first@2x.png in Resources */,
-				B040C2FC164F9E300074BD25 /* second.png in Resources */,
-				B040C2FE164F9E300074BD25 /* second@2x.png in Resources */,
 				B040C301164F9E300074BD25 /* HomeViewController_iPhone.xib in Resources */,
 				B040C307164F9E300074BD25 /* GraphViewController_iPhone.xib in Resources */,
 				654E939A165130ED00CD32CE /* InputViewController.xib in Resources */,
@@ -559,6 +569,12 @@
 				659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */,
 				65DEF5F71663D2AF00AB5521 /* AlermCellView.xib in Resources */,
 				B00283021672F9380099DA82 /* README.md in Resources */,
+				B05FC45A167469050082F59F /* settings.png in Resources */,
+				B05FC45B167469050082F59F /* settings@2.png in Resources */,
+				B05FC46116746A3E0082F59F /* graph.png in Resources */,
+				B05FC46216746A3E0082F59F /* graph@2.png in Resources */,
+				B05FC46316746A3E0082F59F /* home.png in Resources */,
+				B05FC46416746A3E0082F59F /* home@2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Setting", @"Setting");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.image = [UIImage imageNamed:@"settings"];
         self.setting = [[Setting alloc] init];
         
         NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
