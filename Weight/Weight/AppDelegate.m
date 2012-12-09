@@ -89,8 +89,8 @@
 - (void)initializeChartboost
 {
     Chartboost *cb = [Chartboost sharedChartboost];
-    cb.appId = @"50c2c2da17ba47c54f000002";
-    cb.appSignature = @"95a65217245e29793b2b9f7ed5d3a310e9bcf246";
+    cb.appId = @"50c4498217ba47de0e000001";
+    cb.appSignature = @"e00046ca8f407cffd953be0a29932b3564bded93";
     [cb startSession];
     [cb showInterstitial];
 }
