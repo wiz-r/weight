@@ -10,6 +10,7 @@
 #import "InputViewController.h"
 
 @interface HomeViewController ()
+@property (strong, nonatomic) IBOutlet UIView *view;
 
 - (IBAction)inputButtonPushed:(id)sender;
 @end
@@ -23,6 +24,9 @@
         self.title = NSLocalizedString(@"Home", @"Home");
         self.tabBarItem.image = [UIImage imageNamed:@"home"];
     }
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"cream.jpg"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     return self;
 }
 							

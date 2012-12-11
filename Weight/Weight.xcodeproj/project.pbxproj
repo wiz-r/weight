@@ -23,6 +23,7 @@
 		6569633E165D919D0068B690 /* WeightCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569633D165D919C0068B690 /* WeightCollection.m */; };
 		659BBBEF1662126E0049A9AF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BBBED1662126E0049A9AF /* SettingViewController.m */; };
 		659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BBBEE1662126E0049A9AF /* SettingViewController.xib */; };
+		65D3145716776105009E2260 /* cream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65D3145616776105009E2260 /* cream.jpg */; };
 		65DEF5EE1663C9ED00AB5521 /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEF5ED1663C9ED00AB5521 /* AlarmCell.m */; };
 		65DEF5F71663D2AF00AB5521 /* AlermCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */; };
 		B00283011672F9380099DA82 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B00282FF1672F9380099DA82 /* libChartboost.a */; };
@@ -97,6 +98,7 @@
 		659BBBEC1662126E0049A9AF /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		659BBBED1662126E0049A9AF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		659BBBEE1662126E0049A9AF /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		65D3145616776105009E2260 /* cream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cream.jpg; sourceTree = "<group>"; };
 		65DEF5EC1663C9ED00AB5521 /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
 		65DEF5ED1663C9ED00AB5521 /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
 		65DEF5F61663D2AF00AB5521 /* AlermCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlermCellView.xib; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 		B05FC457167469050082F59F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				65D3145616776105009E2260 /* cream.jpg */,
 				B05FC45D16746A3E0082F59F /* graph.png */,
 				B05FC45E16746A3E0082F59F /* graph@2.png */,
 				B05FC45F16746A3E0082F59F /* home.png */,
@@ -605,6 +608,7 @@
 				655C99631676357100FA4BC4 /* appicon@2x.png in Resources */,
 				655C99651676362600FA4BC4 /* appicon-72.png in Resources */,
 				655C99671676362800FA4BC4 /* appicon-72@2x.png in Resources */,
+				65D3145716776105009E2260 /* cream.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
