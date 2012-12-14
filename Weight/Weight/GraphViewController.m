@@ -139,8 +139,20 @@
     
     // Y Axis
     plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(minY) length:CPTDecimalFromFloat(maxY - minY)];
-    yAxis.majorIntervalLength = CPTDecimalFromFloat(0.2f);
-    yAxis.minorTicksPerInterval = 1.0f;
+    float yRange = maxWeight - minWeight;
+    if (yRange <= 2.0f) {
+        yAxis.majorIntervalLength = CPTDecimalFromFloat(0.2f);
+        yAxis.minorTicksPerInterval = 1.0f;
+    } else if (yRange <= 4.0f) {
+        yAxis.majorIntervalLength = CPTDecimalFromFloat(0.4f);
+        yAxis.minorTicksPerInterval = 1.0f;
+    } else if (yRange <= 10.0f){
+        yAxis.majorIntervalLength = CPTDecimalFromFloat(0.5f);
+        yAxis.minorTicksPerInterval = 1.0f;
+    } else {
+        yAxis.majorIntervalLength = CPTDecimalFromFloat(1.0f);
+        yAxis.minorTicksPerInterval = 1.0f;
+    }
     
     // Scatter Plot
     CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
