@@ -65,6 +65,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [self initializeChartboost];
     Setting* setting = [[Setting alloc] init];
     [setting setAlarmNotification];
