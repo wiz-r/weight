@@ -33,6 +33,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        UIImage *backgroundImage = [UIImage imageNamed:@"cream.jpg"];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     }
     return self;
 }
@@ -41,13 +43,6 @@
 {
     [super viewWillAppear:animated];
     self.pickerView.hidden = YES;
-   /*
-    if ([self.textField canBecomeFirstResponder])
-    {
-        [self.textField becomeFirstResponder];
-    }
-    self.textField.returnKeyType = UIReturnKeyDone;
-    */
 }
 - (void)viewDidLoad
 {
