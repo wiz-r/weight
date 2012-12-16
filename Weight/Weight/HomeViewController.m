@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "InputViewController.h"
 
+#import "Flurry.h"
+
 @interface HomeViewController ()
 @property (strong, nonatomic) IBOutlet UIView *view;
 
@@ -33,22 +35,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
-    // Create a view of the standard size at the top of the screen.
-    // Available AdSize constants are explained in GADAdSize.h.
     bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    
-    // Specify the ad's "unit identifier." This is your AdMob Publisher ID.
     bannerView_.adUnitID = @"a150912ee3eb5b0";
-    
-    // Let the runtime know which UIViewController to restore after taking
-    // the user wherever the ad goes and add it to the view hierarchy.
     bannerView_.rootViewController = self;
     [self.view addSubview:bannerView_];
-    
-    // Initiate a generic request to load it with an ad.
     [bannerView_ loadRequest:[GADRequest request]];
+    
+    [Flurry logEvent:@"Home_View"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,8 @@
 #import "InputViewController.h"
 #import "WeightCollection.h"
 
+#import "Flurry.h"
+
 @interface InputViewController ()
 - (IBAction)datePickerChanged:(id)sender;
 - (IBAction)cancelButtonPushed:(id)sender;
@@ -50,6 +52,7 @@
     NSDate* today = [NSDate date];
     [self.datePicker setDate:today];
     [self.dateButton setTitle:[self pickDate] forState:UIControlStateNormal];
+    [Flurry logEvent:@"Input_View"];
 }
 
 - (void)didReceiveMemoryWarning

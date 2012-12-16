@@ -10,6 +10,8 @@
 #import "WeightData.h"
 #import "InputViewController.h"
 
+#import "Flurry.h"
+
 @interface GraphViewController ()
 @property (retain, nonatomic) CPTXYGraph* graph;
 @property (weak, nonatomic) IBOutlet UIView *menuView;
@@ -35,6 +37,7 @@
 {
     [super viewDidLoad];
     [self drawGraph];
+    [Flurry logEvent:@"Graph_View"];
 }
 
 - (void)didReceiveMemoryWarning

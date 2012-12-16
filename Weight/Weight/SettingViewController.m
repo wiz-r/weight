@@ -10,6 +10,8 @@
 #import "AlarmCell.h"
 #import "Setting.h"
 
+#import "Flurry.h"
+
 #define SETTING_VIEW_DATE_FORMAT @"HH:mm"
 
 @interface SettingViewController ()
@@ -44,6 +46,8 @@
     [dateFormat setDateFormat:SETTING_VIEW_DATE_FORMAT];
     NSDate* date = [dateFormat dateFromString:[self.setting valueForKey:SETTING_ALARM_DATE]];
     self.datePicker.date = date;
+    
+    [Flurry logEvent:@"Setting_View"];
 }
 
 - (void)didReceiveMemoryWarning
