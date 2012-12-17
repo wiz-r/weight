@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		654E9399165130ED00CD32CE /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654E9397165130ED00CD32CE /* InputViewController.m */; };
 		654E939A165130ED00CD32CE /* InputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654E9398165130ED00CD32CE /* InputViewController.xib */; };
-		65583830167F2FCB006CD7C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */; };
-		65583833167F2FCF006CD7C3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65583832167F2FCF006CD7C3 /* Default@2x.png */; };
-		65583835167F2FD2006CD7C3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 65583834167F2FD2006CD7C3 /* Default.png */; };
 		65583845167F371A006CD7C3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65583844167F371A006CD7C3 /* logo.png */; };
 		655C99601676356D00FA4BC4 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 655C995F1676356D00FA4BC4 /* appicon.png */; };
 		655C99631676357100FA4BC4 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 655C99621676357100FA4BC4 /* appicon@2x.png */; };
@@ -25,6 +22,9 @@
 		6563476F1653DD6300B91B82 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6563476E1653DD6300B91B82 /* MessageUI.framework */; };
 		656347711653DD6E00B91B82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656347701653DD6E00B91B82 /* SystemConfiguration.framework */; };
 		6569633E165D919D0068B690 /* WeightCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569633D165D919C0068B690 /* WeightCollection.m */; };
+		658CBFC2167F39A00075FC0E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658CBFC1167F39A00075FC0E /* Default@2x.png */; };
+		658CBFC4167F39C80075FC0E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 658CBFC3167F39C80075FC0E /* Default.png */; };
+		658CBFC6167F39CE0075FC0E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658CBFC5167F39CE0075FC0E /* Default-568h@2x.png */; };
 		659BBBEF1662126E0049A9AF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BBBED1662126E0049A9AF /* SettingViewController.m */; };
 		659BBBF01662126E0049A9AF /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BBBEE1662126E0049A9AF /* SettingViewController.xib */; };
 		65D3145716776105009E2260 /* cream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65D3145616776105009E2260 /* cream.jpg */; };
@@ -79,9 +79,6 @@
 		654E9396165130ED00CD32CE /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
 		654E9397165130ED00CD32CE /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
 		654E9398165130ED00CD32CE /* InputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputViewController.xib; sourceTree = "<group>"; };
-		6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		65583832167F2FCF006CD7C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		65583834167F2FD2006CD7C3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		65583844167F371A006CD7C3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		655C995F1676356D00FA4BC4 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon.png; path = ../appicon.png; sourceTree = "<group>"; };
 		655C99621676357100FA4BC4 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon@2x.png"; path = "../appicon@2x.png"; sourceTree = "<group>"; };
@@ -105,6 +102,9 @@
 		656347701653DD6E00B91B82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6569633C165D919C0068B690 /* WeightCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightCollection.h; sourceTree = "<group>"; };
 		6569633D165D919C0068B690 /* WeightCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightCollection.m; sourceTree = "<group>"; };
+		658CBFC1167F39A00075FC0E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		658CBFC3167F39C80075FC0E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		658CBFC5167F39CE0075FC0E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		659BBBEC1662126E0049A9AF /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		659BBBED1662126E0049A9AF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		659BBBEE1662126E0049A9AF /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -304,6 +304,9 @@
 		B040C2CA164F9E2F0074BD25 = {
 			isa = PBXGroup;
 			children = (
+				658CBFC5167F39CE0075FC0E /* Default-568h@2x.png */,
+				658CBFC3167F39C80075FC0E /* Default.png */,
+				658CBFC1167F39A00075FC0E /* Default@2x.png */,
 				B05FC46516747F6C0082F59F /* Flurry */,
 				B05FC457167469050082F59F /* images */,
 				B00282FC1672F9380099DA82 /* Chartboost */,
@@ -505,9 +508,6 @@
 			isa = PBXGroup;
 			children = (
 				65583844167F371A006CD7C3 /* logo.png */,
-				65583834167F2FD2006CD7C3 /* Default.png */,
-				65583832167F2FCF006CD7C3 /* Default@2x.png */,
-				6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */,
 				B0F14C4A167D664E000EF88C /* button_background.png */,
 				B03049EC167D8108003CA3CB /* blue_btn.png */,
 				655C99661676362800FA4BC4 /* appicon-72@2x.png */,
@@ -629,10 +629,10 @@
 				65D3145716776105009E2260 /* cream.jpg in Resources */,
 				B0F14C4B167D664E000EF88C /* button_background.png in Resources */,
 				B03049ED167D8108003CA3CB /* blue_btn.png in Resources */,
-				65583830167F2FCB006CD7C3 /* Default-568h@2x.png in Resources */,
-				65583833167F2FCF006CD7C3 /* Default@2x.png in Resources */,
-				65583835167F2FD2006CD7C3 /* Default.png in Resources */,
 				65583845167F371A006CD7C3 /* logo.png in Resources */,
+				658CBFC2167F39A00075FC0E /* Default@2x.png in Resources */,
+				658CBFC4167F39C80075FC0E /* Default.png in Resources */,
+				658CBFC6167F39CE0075FC0E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
