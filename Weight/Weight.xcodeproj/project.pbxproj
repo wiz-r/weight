@@ -78,9 +78,9 @@
 		654E9396165130ED00CD32CE /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
 		654E9397165130ED00CD32CE /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
 		654E9398165130ED00CD32CE /* InputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputViewController.xib; sourceTree = "<group>"; };
-		6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		65583832167F2FCF006CD7C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		65583834167F2FD2006CD7C3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		65583832167F2FCF006CD7C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		65583834167F2FD2006CD7C3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		655C995F1676356D00FA4BC4 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon.png; path = ../appicon.png; sourceTree = "<group>"; };
 		655C99621676357100FA4BC4 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon@2x.png"; path = "../appicon@2x.png"; sourceTree = "<group>"; };
 		655C99641676362600FA4BC4 /* appicon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-72.png"; path = "../appicon-72.png"; sourceTree = "<group>"; };
@@ -302,9 +302,6 @@
 		B040C2CA164F9E2F0074BD25 = {
 			isa = PBXGroup;
 			children = (
-				65583834167F2FD2006CD7C3 /* Default.png */,
-				65583832167F2FCF006CD7C3 /* Default@2x.png */,
-				6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */,
 				B05FC46516747F6C0082F59F /* Flurry */,
 				B05FC457167469050082F59F /* images */,
 				B00282FC1672F9380099DA82 /* Chartboost */,
@@ -505,6 +502,9 @@
 		B05FC457167469050082F59F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				65583834167F2FD2006CD7C3 /* Default.png */,
+				65583832167F2FCF006CD7C3 /* Default@2x.png */,
+				6558382F167F2FCB006CD7C3 /* Default-568h@2x.png */,
 				B0F14C4A167D664E000EF88C /* button_background.png */,
 				B03049EC167D8108003CA3CB /* blue_btn.png */,
 				655C99661676362800FA4BC4 /* appicon-72@2x.png */,

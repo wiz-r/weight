@@ -87,7 +87,7 @@
         notification.fireDate = fireDate;
         notification.timeZone = [NSTimeZone defaultTimeZone];
         notification.repeatInterval = NSDayCalendarUnit;
-        notification.alertBody = @"It's time to measure your weight for your better life";
+        notification.alertBody = @"It's time to check your weight for getting the ideal body";
         notification.alertAction = @"View Details";
         notification.soundName = UILocalNotificationDefaultSoundName;
         notification.applicationIconBadgeNumber = 1;
