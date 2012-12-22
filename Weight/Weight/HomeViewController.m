@@ -25,10 +25,10 @@
     if (self) {
         self.title = NSLocalizedString(@"Home", @"Home");
         self.tabBarItem.image = [UIImage imageNamed:@"home"];
+        UIImage *backgroundImage = [UIImage imageNamed:@"cream.jpg"];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     }
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"cream.jpg"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     return self;
 }
 							
