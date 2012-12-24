@@ -58,6 +58,10 @@
 		B05FC46316746A3E0082F59F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC45F16746A3E0082F59F /* home.png */; };
 		B05FC46416746A3E0082F59F /* home@2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FC46016746A3E0082F59F /* home@2.png */; };
 		B05FC46816747F6D0082F59F /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B05FC46716747F6D0082F59F /* libFlurry.a */; };
+		B095A2021687F9F4006E575A /* TapjoyPublisherLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A1FE1687F9F4006E575A /* TapjoyPublisherLibrary.a */; };
+		B095A2031687F9F4006E575A /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B095A1FF1687F9F4006E575A /* TapjoyResources.bundle */; };
+		B095A2061687FA2B006E575A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A2051687FA2B006E575A /* CoreTelephony.framework */; };
+		B095A2081687FA37006E575A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A2071687FA37006E575A /* MediaPlayer.framework */; };
 		B0B800201673473A007DFA6C /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8001F1673473A007DFA6C /* Setting.m */; };
 		B0F14C4B167D664E000EF88C /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F14C4A167D664E000EF88C /* button_background.png */; };
 /* End PBXBuildFile section */
@@ -227,6 +231,14 @@
 		B05FC46016746A3E0082F59F /* home@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2.png"; sourceTree = "<group>"; };
 		B05FC46616747F6D0082F59F /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		B05FC46716747F6D0082F59F /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		B095A1FC1687F9F4006E575A /* TapjoyConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnect.h; sourceTree = "<group>"; };
+		B095A1FD1687F9F4006E575A /* TapjoyConnectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnectConstants.h; sourceTree = "<group>"; };
+		B095A1FE1687F9F4006E575A /* TapjoyPublisherLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TapjoyPublisherLibrary.a; sourceTree = "<group>"; };
+		B095A1FF1687F9F4006E575A /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
+		B095A2001687F9F4006E575A /* TJCAdDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJCAdDelegateProtocol.h; sourceTree = "<group>"; };
+		B095A2011687F9F4006E575A /* TJCVideoAdProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJCVideoAdProtocol.h; sourceTree = "<group>"; };
+		B095A2051687FA2B006E575A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B095A2071687FA37006E575A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B0B8001E1673473A007DFA6C /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		B0B8001F1673473A007DFA6C /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 		B0F14C4A167D664E000EF88C /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background.png; sourceTree = "<group>"; };
@@ -237,6 +249,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B095A2081687FA37006E575A /* MediaPlayer.framework in Frameworks */,
+				B095A2061687FA2B006E575A /* CoreTelephony.framework in Frameworks */,
 				656347711653DD6E00B91B82 /* SystemConfiguration.framework in Frameworks */,
 				6563476F1653DD6300B91B82 /* MessageUI.framework in Frameworks */,
 				B040C2DE164F9E2F0074BD25 /* CoreGraphics.framework in Frameworks */,
@@ -250,6 +264,7 @@
 				656347621653DC1B00B91B82 /* libGoogleAdMobAds.a in Frameworks */,
 				B00283011672F9380099DA82 /* libChartboost.a in Frameworks */,
 				B05FC46816747F6D0082F59F /* libFlurry.a in Frameworks */,
+				B095A2021687F9F4006E575A /* TapjoyPublisherLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,9 +313,12 @@
 		B040C2CA164F9E2F0074BD25 = {
 			isa = PBXGroup;
 			children = (
+				B095A2071687FA37006E575A /* MediaPlayer.framework */,
+				B095A2051687FA2B006E575A /* CoreTelephony.framework */,
 				6549C946167F55B000C0930F /* Default@2x.png */,
 				6549C944167F555000C0930F /* Default.png */,
 				655554AB167F548200C1BFA7 /* Default-568h@2x.png */,
+				B095A1FB1687F9F4006E575A /* TapjoyPublisherLibrary */,
 				B05FC46516747F6C0082F59F /* Flurry */,
 				B05FC457167469050082F59F /* images */,
 				B00282FC1672F9380099DA82 /* Chartboost */,
@@ -525,6 +543,19 @@
 			path = Flurry;
 			sourceTree = "<group>";
 		};
+		B095A1FB1687F9F4006E575A /* TapjoyPublisherLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B095A1FC1687F9F4006E575A /* TapjoyConnect.h */,
+				B095A1FD1687F9F4006E575A /* TapjoyConnectConstants.h */,
+				B095A1FE1687F9F4006E575A /* TapjoyPublisherLibrary.a */,
+				B095A1FF1687F9F4006E575A /* TapjoyResources.bundle */,
+				B095A2001687F9F4006E575A /* TJCAdDelegateProtocol.h */,
+				B095A2011687F9F4006E575A /* TJCVideoAdProtocol.h */,
+			);
+			path = TapjoyPublisherLibrary;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -621,6 +652,7 @@
 				655554AC167F548200C1BFA7 /* Default-568h@2x.png in Resources */,
 				6549C945167F555000C0930F /* Default.png in Resources */,
 				6549C947167F55B000C0930F /* Default@2x.png in Resources */,
+				B095A2031687F9F4006E575A /* TapjoyResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +824,7 @@
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1\"",
 					"\"$(SRCROOT)/Chartboost\"",
 					"\"$(SRCROOT)/Flurry\"",
+					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -821,6 +854,7 @@
 					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.2.1\"",
 					"\"$(SRCROOT)/Chartboost\"",
 					"\"$(SRCROOT)/Flurry\"",
+					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

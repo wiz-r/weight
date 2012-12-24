@@ -17,6 +17,7 @@
 
 #import "Chartboost.h"
 #import "Flurry.h"
+#import "TapjoyConnect.h"
 
 @implementation AppDelegate
 
@@ -39,6 +40,9 @@
     self.tabBarController.viewControllers = @[self.homeViewController, self.graphViewController, self.settingViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    // Tapjoy
+    [TapjoyConnect requestTapjoyConnect:@"54488a08-b30c-47a6-955b-1c2a1c6950a8" secretKey:@"TZgK749ZhdV3rIxKCN8U"];
     
     NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(inputViewClosedEventReceived:) name:INPUT_CLOSE_NOTIFICATION_NAME object:nil];
