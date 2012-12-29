@@ -84,6 +84,9 @@
     [collection add:data];
     [collection save];
     
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: weight, @"weight", nil];
+    [Flurry logEvent:@"Input_Weight" withParameters:params];
+    
     [self dismissViewControllerAnimated:YES completion:^{
         [self emitCloseEvent];
     }];
