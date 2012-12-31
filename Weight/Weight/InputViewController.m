@@ -81,6 +81,13 @@
         
     WeightData* data = [[WeightData alloc] initWithWeight:[weight floatValue] :self.datePicker.date];
     WeightCollection* collection = [[WeightCollection alloc] init];
+    
+    WeightData* latest = [collection latest];
+    if (latest) {
+        float diff = data.weight - latest.weight;
+        NSLog(@"%0.2f", diff);
+    }
+    
     [collection add:data];
     [collection save];
     
