@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 takuya. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "InputViewController.h"
 
@@ -13,8 +14,10 @@
 
 @interface HomeViewController ()
 @property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UIButton *fbButton;
 
 - (IBAction)inputButtonPushed:(id)sender;
+- (IBAction)fbButtonPushed:(id)sender;
 @end
 
 @implementation HomeViewController
@@ -43,6 +46,15 @@
     [bannerView_ loadRequest:[GADRequest request]];
     
     [Flurry logEvent:@"Home_View"];
+    
+    
+    /* TODO : bug.... fix....
+     [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(sessionStateChanged:)
+     name:FBSessionStateChangedNotification
+     object:nil];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +68,28 @@
     [self presentViewController:inputViewController animated:YES completion:^{
         ;
     }];
+}
+
+- (IBAction)fbButtonPushed:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (FBSession.activeSession.isOpen) {
+        NSLog(@"already logged in");
+    } else {
+        // The user has initiated a login, so call the openSession method
+        // and show the login UX if necessary.
+        [appDelegate openSessionWithAllowLoginUI:YES];
+    }
+}
+
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    if (FBSession.activeSession.isOpen) {
+        [self.fbButton setTitle:@"--" forState:UIControlStateNormal];
+    } else {
+        [self.fbButton setTitle:@"FB" forState:UIControlStateNormal];
+    }
 }
 
 @end
