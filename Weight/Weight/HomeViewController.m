@@ -47,20 +47,16 @@
     
     [Flurry logEvent:@"Home_View"];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionStateChanged:) name:FBSessionStateChangedNotification object:nil];
     
-    /* TODO : bug.... fix....
-     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(sessionStateChanged:)
-     name:FBSessionStateChangedNotification
-     object:nil];
-     */
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate openSessionWithAllowLoginUI:NO];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)inputButtonPushed:(id)sender {
@@ -81,12 +77,9 @@
     }
 }
 
-- (void)sessionStateChanged:(FBSession *)session
-                      state:(FBSessionState) state
-                      error:(NSError *)error
-{
+- (void)sessionStateChanged:(NSNotification*)notification {
     if (FBSession.activeSession.isOpen) {
-        [self.fbButton setTitle:@"--" forState:UIControlStateNormal];
+        self.fbButton.hidden = YES;
     } else {
         [self.fbButton setTitle:@"FB" forState:UIControlStateNormal];
     }
