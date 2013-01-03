@@ -8,6 +8,7 @@
 
 #import "InputViewController.h"
 #import "WeightCollection.h"
+#import "AppDelegate.h"
 
 #import "Flurry.h"
 
@@ -51,16 +52,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NSDate* today = [NSDate date];
     [self.datePicker setDate:today];
     [self.dateButton setTitle:[self pickDate] forState:UIControlStateNormal];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionStateChanged:) name:FBSessionStateChangedNotification object:nil];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate openSessionWithAllowLoginUI:NO];
     [Flurry logEvent:@"Input_View"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)datePickerChanged:(id)sender {
@@ -102,6 +110,18 @@
 }
 
 - (IBAction)fbSwitchPushed:(id)sender {
+    if (self.fbSwitch.on) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        if (FBSession.activeSession.isOpen) {
+            NSLog(@"already logged in");
+        } else {
+            // The user has initiated a login, so call the openSession method
+            // and show the login UX if necessary.
+            [appDelegate openSessionWithAllowLoginUI:YES];
+        }
+    } else {
+        // TODO : log off
+    }
 }
 
 - (IBAction)closeSoftwareKeyboard:(id)sender {
@@ -133,5 +153,9 @@
 {
     NSNotification* n = [NSNotification notificationWithName:INPUT_CLOSE_NOTIFICATION_NAME object:self];
     [[NSNotificationCenter defaultCenter] postNotification:n];
+}
+
+- (void)sessionStateChanged:(NSNotification*)notification {
+    self.fbSwitch.on = FBSession.activeSession.isOpen;
 }
 @end
