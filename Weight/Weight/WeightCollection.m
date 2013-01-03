@@ -70,4 +70,14 @@
     }
 }
 
+-(WeightData*) latest
+{
+    NSMutableArray* array = [self array];
+    if ([array count] == 0) {
+        return nil;
+    } else {
+        return [array objectAtIndex:(0)];
+    }
+}
+
 @end

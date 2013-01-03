@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+
+extern NSString *const FBSessionStateChangedNotification;
+
 @class GraphViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
@@ -16,5 +20,6 @@
 @property (strong, nonatomic) GraphViewController *graphViewController;
 @property (strong, nonatomic) UIViewController *homeViewController;
 @property (strong, nonatomic) UIViewController *settingViewController;
-
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
+- (void)closeSession;
 @end

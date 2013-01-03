@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 takuya. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "InputViewController.h"
 
@@ -48,7 +49,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)inputButtonPushed:(id)sender {

@@ -8,6 +8,7 @@
 
 #import "InputViewController.h"
 #import "WeightCollection.h"
+#import "AppDelegate.h"
 
 #import "Flurry.h"
 
@@ -16,11 +17,13 @@
 - (IBAction)cancelButtonPushed:(id)sender;
 - (IBAction)dateButtonPushed:(id)sender;
 - (IBAction)okButtonPushed:(id)sender;
+- (IBAction)fbSwitchPushed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 - (IBAction)closeSoftwareKeyboard:(id)sender;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (weak, nonatomic) IBOutlet UISwitch *fbSwitch;
 @property (weak, nonatomic) IBOutlet UIView *pickerView;
 - (IBAction)buttonPushed:(id)sender;
 - (IBAction)clearPushed:(id)sender;
@@ -49,16 +52,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NSDate* today = [NSDate date];
     [self.datePicker setDate:today];
     [self.dateButton setTitle:[self pickDate] forState:UIControlStateNormal];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionStateChanged:) name:FBSessionStateChangedNotification object:nil];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate openSessionWithAllowLoginUI:NO];
     [Flurry logEvent:@"Input_View"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)datePickerChanged:(id)sender {
@@ -81,6 +91,17 @@
         
     WeightData* data = [[WeightData alloc] initWithWeight:[weight floatValue] :self.datePicker.date];
     WeightCollection* collection = [[WeightCollection alloc] init];
+    
+    WeightData* latest = [collection latest];
+    if (latest) {
+        float diff = data.weight - latest.weight;
+        NSLog(@"%0.2f", diff);
+        
+        if (FBSession.activeSession.isOpen) {
+            [self postToFB:diff];
+        }
+    }
+    
     [collection add:data];
     [collection save];
     
@@ -90,6 +111,19 @@
     [self dismissViewControllerAnimated:YES completion:^{
         [self emitCloseEvent];
     }];
+}
+
+- (IBAction)fbSwitchPushed:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (self.fbSwitch.on) {
+        if (FBSession.activeSession.isOpen) {
+            NSLog(@"already logged in");
+        } else {
+            [appDelegate openSessionWithAllowLoginUI:YES];
+        }
+    } else {
+        [appDelegate closeSession];
+    }
 }
 
 - (IBAction)closeSoftwareKeyboard:(id)sender {
@@ -121,5 +155,45 @@
 {
     NSNotification* n = [NSNotification notificationWithName:INPUT_CLOSE_NOTIFICATION_NAME object:self];
     [[NSNotificationCenter defaultCenter] postNotification:n];
+}
+
+- (void)sessionStateChanged:(NSNotification*)notification {
+    self.fbSwitch.on = FBSession.activeSession.isOpen;
+}
+
+- (void)postToFB:(float)diff {
+    if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound) {
+        // No permissions found in session, ask for it
+        [FBSession.activeSession
+         reauthorizeWithPublishPermissions: [NSArray arrayWithObject:@"publish_actions"]
+         defaultAudience:FBSessionDefaultAudienceFriends
+         completionHandler:^(FBSession *session, NSError *error) {
+             if (!error) {
+                 [self postToFB:diff];
+             }
+         }];
+        return;
+    }
+    
+    NSString* message = nil;
+    if (diff < 0) {
+        message = [NSString stringWithFormat:@"Yes!! Today, my weight got %0.2f", diff];
+    } else {
+        message = [NSString stringWithFormat:@"Hmm... Today, my weight got +%0.2f", diff];
+    }
+    NSString* appDescription = @"I'm now tracking my weight and getting ideal body.  Let's do it together!!";
+    
+    NSMutableDictionary* postParams = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+     @"http://bit.ly/X2vhj7", @"link",
+     @"http://wiz-r.com/WeightLogger/appicon.png", @"picture",
+     @"Weight Logger :)", @"name",
+     message, @"caption",
+     appDescription, @"description",
+     nil];
+    
+    [FBRequestConnection startWithGraphPath:@"me/feed" parameters:postParams HTTPMethod:@"POST"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              ;;
+     }];
 }
 @end

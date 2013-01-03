@@ -17,4 +17,5 @@
 -(void) load;
 -(void) save;
 -(NSMutableArray*) array;
+-(WeightData*) latest;
 @end
