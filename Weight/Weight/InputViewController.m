@@ -96,6 +96,10 @@
     if (latest) {
         float diff = data.weight - latest.weight;
         NSLog(@"%0.2f", diff);
+        
+        if (FBSession.activeSession.isOpen) {
+            // TODO : post to fb
+        }
     }
     
     [collection add:data];
@@ -110,17 +114,15 @@
 }
 
 - (IBAction)fbSwitchPushed:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if (self.fbSwitch.on) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         if (FBSession.activeSession.isOpen) {
             NSLog(@"already logged in");
         } else {
-            // The user has initiated a login, so call the openSession method
-            // and show the login UX if necessary.
             [appDelegate openSessionWithAllowLoginUI:YES];
         }
     } else {
-        // TODO : log off
+        [appDelegate closeSession];
     }
 }
 

@@ -124,11 +124,14 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     switch (state) {
         case FBSessionStateOpen:
             if (!error) {
-                // We have a valid session
                 NSLog(@"User session found");
+                [Flurry logEvent:@"FB_Login"];
             }
             break;
         case FBSessionStateClosed:
+            NSLog(@"User session closed");
+            [Flurry logEvent:@"FB_Logout"];
+            break;
         case FBSessionStateClosedLoginFailed:
             [FBSession.activeSession closeAndClearTokenInformation];
             break;
@@ -164,6 +167,10 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
                                                                  state:state
                                                                  error:error];
                                          }];
+}
+
+- (void) closeSession {
+    [FBSession.activeSession closeAndClearTokenInformation];
 }
 
 /*
