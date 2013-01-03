@@ -16,11 +16,13 @@
 - (IBAction)cancelButtonPushed:(id)sender;
 - (IBAction)dateButtonPushed:(id)sender;
 - (IBAction)okButtonPushed:(id)sender;
+- (IBAction)fbSwitchPushed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 - (IBAction)closeSoftwareKeyboard:(id)sender;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (weak, nonatomic) IBOutlet UISwitch *fbSwitch;
 @property (weak, nonatomic) IBOutlet UIView *pickerView;
 - (IBAction)buttonPushed:(id)sender;
 - (IBAction)clearPushed:(id)sender;
@@ -97,6 +99,9 @@
     [self dismissViewControllerAnimated:YES completion:^{
         [self emitCloseEvent];
     }];
+}
+
+- (IBAction)fbSwitchPushed:(id)sender {
 }
 
 - (IBAction)closeSoftwareKeyboard:(id)sender {
