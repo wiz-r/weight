@@ -98,7 +98,7 @@
         NSLog(@"%0.2f", diff);
         
         if (FBSession.activeSession.isOpen) {
-            // TODO : post to fb
+            [self postToFB:diff];
         }
     }
     
@@ -159,5 +159,48 @@
 
 - (void)sessionStateChanged:(NSNotification*)notification {
     self.fbSwitch.on = FBSession.activeSession.isOpen;
+}
+
+- (void)postToFB:(float)diff {
+    if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound) {
+        // No permissions found in session, ask for it
+        [FBSession.activeSession
+         reauthorizeWithPublishPermissions: [NSArray arrayWithObject:@"publish_actions"]
+         defaultAudience:FBSessionDefaultAudienceFriends
+         completionHandler:^(FBSession *session, NSError *error) {
+             if (!error) {
+                 [self postToFB:diff];
+             }
+         }];
+        return;
+    }
+    NSMutableDictionary* postParams = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+     @"http://bit.ly/X2vhj7", @"link",
+     @"http://wiz-r.com/WeightLogger/appicon.png", @"picture",
+     @"Weight Logger :)", @"name",
+     @"I'm now tracking my weight and getting ideal body", @"caption",
+     [NSString stringWithFormat:@"Today, my weight got %0.2f", diff], @"description",
+     nil];
+    
+    [FBRequestConnection startWithGraphPath:@"me/feed" parameters:postParams HTTPMethod:@"POST"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+         NSString *alertText;
+         if (error) {
+             alertText = [NSString stringWithFormat:
+                          @"error: domain = %@, code = %d",
+                          error.domain, error.code];
+         } else {
+             alertText = [NSString stringWithFormat:
+                          @"Posted action, id: %@",
+                          [result objectForKey:@"id"]];
+         }
+         // Show the result in an alert
+         [[[UIAlertView alloc] initWithTitle:@"Result"
+                                     message:alertText
+                                    delegate:self
+                           cancelButtonTitle:@"OK!"
+                           otherButtonTitles:nil]
+          show];
+     }];
 }
 @end

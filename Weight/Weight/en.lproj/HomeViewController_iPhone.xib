@@ -179,9 +179,9 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="217257160"/>
 							<reference ref="875249852"/>
 							<reference ref="742013142"/>
+							<reference ref="217257160"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
