@@ -186,8 +186,8 @@
     NSMutableDictionary* postParams = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
      @"http://bit.ly/X2vhj7", @"link",
      @"http://wiz-r.com/WeightLogger/appicon.png", @"picture",
-     @"Weight Logger :)", @"name",
-     message, @"caption",
+     message, @"name",
+     @"Weight Logger :)", @"caption",
      appDescription, @"description",
      nil];
     
