@@ -167,7 +167,7 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     NSArray *permissions = [[NSArray alloc] initWithObjects:
                             @"email",
                             @"user_likes",
-                            @"publish_actions",
+                            //@"publish_actions",
                             nil];
     return [FBSession openActiveSessionWithPublishPermissions:permissions defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
             [self sessionStateChanged:session state:state error:error];
