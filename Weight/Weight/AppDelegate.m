@@ -43,6 +43,12 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
+    UILocalNotification *notify = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (notify) {
+        [Flurry logEvent:@"Launch_With_Notify"];
+        NSLog(@"launch with nofitication");
+    }
+    
     // Tapjoy
     [TapjoyConnect requestTapjoyConnect:@"54488a08-b30c-47a6-955b-1c2a1c6950a8" secretKey:@"TZgK749ZhdV3rIxKCN8U"];
     
