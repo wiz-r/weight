@@ -69,6 +69,7 @@
 		B095A2081687FA37006E575A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A2071687FA37006E575A /* MediaPlayer.framework */; };
 		B0B800201673473A007DFA6C /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8001F1673473A007DFA6C /* Setting.m */; };
 		B0D438071695606400AE4BB7 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0D438061695606400AE4BB7 /* f_logo.png */; };
+		B0DB6367169865FD00CD4619 /* game-center-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0DB6366169865FD00CD4619 /* game-center-logo.png */; };
 		B0F14C4B167D664E000EF88C /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F14C4A167D664E000EF88C /* button_background.png */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +254,7 @@
 		B0B8001E1673473A007DFA6C /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		B0B8001F1673473A007DFA6C /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 		B0D438061695606400AE4BB7 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
+		B0DB6366169865FD00CD4619 /* game-center-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-center-logo.png"; sourceTree = "<group>"; };
 		B0F14C4A167D664E000EF88C /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -537,6 +539,7 @@
 		B05FC457167469050082F59F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B0DB6366169865FD00CD4619 /* game-center-logo.png */,
 				B0D438061695606400AE4BB7 /* f_logo.png */,
 				65583844167F371A006CD7C3 /* logo.png */,
 				B0F14C4A167D664E000EF88C /* button_background.png */,
@@ -677,6 +680,7 @@
 				B095A2031687F9F4006E575A /* TapjoyResources.bundle in Resources */,
 				B064852B169175220030C59F /* FacebookSDKResources.bundle in Resources */,
 				B0D438071695606400AE4BB7 /* f_logo.png in Resources */,
+				B0DB6367169865FD00CD4619 /* game-center-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
