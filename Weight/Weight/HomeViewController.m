@@ -71,7 +71,7 @@
     GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
     if (leaderboardController != nil) {
         leaderboardController.leaderboardDelegate = self;
-        [self presentModalViewController: leaderboardController animated: YES];
+        [self presentViewController: leaderboardController animated:YES completion:nil];
     }
 }
 
