@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+
+#import <GameKit/GameKit.h>
+
 #import "HomeViewController.h"
 #import "InputViewController.h"
 
@@ -16,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIView *view;
 
 - (IBAction)inputButtonPushed:(id)sender;
+- (IBAction)boardButtonPushed:(id)sender;
 @end
 
 @implementation HomeViewController
@@ -56,6 +60,24 @@
     [self presentViewController:inputViewController animated:YES completion:^{
         ;
     }];
+}
+
+- (IBAction)boardButtonPushed:(id)sender {
+    [self showBord];
+}
+
+-(IBAction)showBord
+{
+    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != nil) {
+        leaderboardController.leaderboardDelegate = self;
+        [self presentModalViewController: leaderboardController animated: YES];
+    }
+}
+
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

@@ -6,9 +6,12 @@
 //  Copyright (c) 2012 takuya. All rights reserved.
 //
 
+#import "AppDelegate.h"
+
+#import <GameKit/GameKit.h>
+
 #import "InputViewController.h"
 #import "WeightCollection.h"
-#import "AppDelegate.h"
 
 #import "Flurry.h"
 
@@ -94,13 +97,32 @@
     
     WeightData* latest = [collection latest];
     if (latest) {
-        float diff = data.weight - latest.weight;
-        NSLog(@"%0.2f", diff);
+        float diffToday = data.weight - latest.weight;
+        NSLog(@"%0.2f", diffToday);
+        
+        GKScore *scoreDaily = [[GKScore alloc] initWithCategory:@"daily"];
+        scoreDaily.value = diffToday * 100.0f;
+        [scoreDaily reportScoreWithCompletionHandler:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"error %@",error);
+            }
+        }];
         
         if (FBSession.activeSession.isOpen) {
-            [self postToFB:diff];
+            [self postToFB:diffToday];
         }
     }
+    
+    // post total score to Game Center
+    float maxWeight = [collection maxWeight];
+    float diffTotal = data.weight - maxWeight;
+    GKScore *scoreTotal = [[GKScore alloc] initWithCategory:@"total"];
+    scoreTotal.value = diffTotal * 100.0f;
+    [scoreTotal reportScoreWithCompletionHandler:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"error %@",error);
+        }
+    }];
     
     [collection add:data];
     [collection save];

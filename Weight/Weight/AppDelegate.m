@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <GameKit/GameKit.h>
+
 #import "HomeViewController.h"
 #import "GraphViewController.h"
 #import "WeightCollection.h"
@@ -48,6 +50,9 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
         [Flurry logEvent:@"Launch_With_Notify"];
         NSLog(@"launch with nofitication");
     }
+    
+    // Gamecenter
+    [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
     
     // Tapjoy
     [TapjoyConnect requestTapjoyConnect:@"54488a08-b30c-47a6-955b-1c2a1c6950a8" secretKey:@"TZgK749ZhdV3rIxKCN8U"];
@@ -178,10 +183,6 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     [FBSession.activeSession closeAndClearTokenInformation];
 }
 
-/*
- * If we have a valid session at the time of openURL call, we handle
- * Facebook transitions by passing the url argument to handleOpenURL
- */
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -189,5 +190,4 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     // attempt to extract a token from the url
     return [FBSession.activeSession handleOpenURL:url];
 }
-
 @end
