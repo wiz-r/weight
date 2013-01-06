@@ -9,6 +9,7 @@
 #import "GraphViewController.h"
 #import "WeightData.h"
 #import "InputViewController.h"
+#import "WeightCollection.h"
 
 #import "Flurry.h"
 
@@ -77,17 +78,8 @@
     // data
     NSTimeInterval oneDay = 24.0f * 60.0f * 60.0f;
     
-    float minWeight = 0.0f;
-    float maxWeight = 0.0f;
-    for (int i = 0; i < self.data.count; i++) {
-        WeightData* data = [self.data objectAtIndex:i];
-        if (i == 0) {
-            minWeight = maxWeight = data.weight;
-        } else {
-            minWeight = MIN(data.weight, minWeight);
-            maxWeight = MAX(data.weight, maxWeight);
-        }
-    }
+    float minWeight = [[[WeightCollection alloc] init] minWeight];
+    float maxWeight = [[[WeightCollection alloc] init] maxWeight];
     float minY = minWeight - 0.2f;
     float maxY = maxWeight + 0.2f;
 	

@@ -62,12 +62,14 @@
 		B064852B169175220030C59F /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B064852A169175220030C59F /* FacebookSDKResources.bundle */; };
 		B064852D169175360030C59F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B064852C169175360030C59F /* Accounts.framework */; };
 		B064852F169175440030C59F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B064852E169175440030C59F /* Social.framework */; };
+		B07D92A81697AE1B004574D8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07D92A71697AE1B004574D8 /* GameKit.framework */; };
 		B095A2021687F9F4006E575A /* TapjoyPublisherLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A1FE1687F9F4006E575A /* TapjoyPublisherLibrary.a */; };
 		B095A2031687F9F4006E575A /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B095A1FF1687F9F4006E575A /* TapjoyResources.bundle */; };
 		B095A2061687FA2B006E575A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A2051687FA2B006E575A /* CoreTelephony.framework */; };
 		B095A2081687FA37006E575A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B095A2071687FA37006E575A /* MediaPlayer.framework */; };
 		B0B800201673473A007DFA6C /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8001F1673473A007DFA6C /* Setting.m */; };
 		B0D438071695606400AE4BB7 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0D438061695606400AE4BB7 /* f_logo.png */; };
+		B0DB6367169865FD00CD4619 /* game-center-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0DB6366169865FD00CD4619 /* game-center-logo.png */; };
 		B0F14C4B167D664E000EF88C /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F14C4A167D664E000EF88C /* button_background.png */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +242,7 @@
 		B064852A169175220030C59F /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		B064852C169175360030C59F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		B064852E169175440030C59F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B07D92A71697AE1B004574D8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B095A1FC1687F9F4006E575A /* TapjoyConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnect.h; sourceTree = "<group>"; };
 		B095A1FD1687F9F4006E575A /* TapjoyConnectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnectConstants.h; sourceTree = "<group>"; };
 		B095A1FE1687F9F4006E575A /* TapjoyPublisherLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TapjoyPublisherLibrary.a; sourceTree = "<group>"; };
@@ -251,6 +254,7 @@
 		B0B8001E1673473A007DFA6C /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		B0B8001F1673473A007DFA6C /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 		B0D438061695606400AE4BB7 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
+		B0DB6366169865FD00CD4619 /* game-center-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-center-logo.png"; sourceTree = "<group>"; };
 		B0F14C4A167D664E000EF88C /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07D92A81697AE1B004574D8 /* GameKit.framework in Frameworks */,
 				B064852F169175440030C59F /* Social.framework in Frameworks */,
 				656347691653DC4F00B91B82 /* AdSupport.framework in Frameworks */,
 				B064852D169175360030C59F /* Accounts.framework in Frameworks */,
@@ -354,6 +359,7 @@
 		B040C2D8164F9E2F0074BD25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B07D92A71697AE1B004574D8 /* GameKit.framework */,
 				B064852E169175440030C59F /* Social.framework */,
 				B064852C169175360030C59F /* Accounts.framework */,
 				B064852A169175220030C59F /* FacebookSDKResources.bundle */,
@@ -533,6 +539,7 @@
 		B05FC457167469050082F59F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B0DB6366169865FD00CD4619 /* game-center-logo.png */,
 				B0D438061695606400AE4BB7 /* f_logo.png */,
 				65583844167F371A006CD7C3 /* logo.png */,
 				B0F14C4A167D664E000EF88C /* button_background.png */,
@@ -673,6 +680,7 @@
 				B095A2031687F9F4006E575A /* TapjoyResources.bundle in Resources */,
 				B064852B169175220030C59F /* FacebookSDKResources.bundle in Resources */,
 				B0D438071695606400AE4BB7 /* f_logo.png in Resources */,
+				B0DB6367169865FD00CD4619 /* game-center-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

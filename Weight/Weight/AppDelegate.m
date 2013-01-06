@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <GameKit/GameKit.h>
+
 #import "HomeViewController.h"
 #import "GraphViewController.h"
 #import "WeightCollection.h"
@@ -47,6 +49,26 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     if (notify) {
         [Flurry logEvent:@"Launch_With_Notify"];
         NSLog(@"launch with nofitication");
+    }
+    
+    // Gamecenter
+    NSString *reqSysVer = @"6.0";
+    NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
+    if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending)
+    {
+        // Gamekit login for ios 6
+        [[GKLocalPlayer localPlayer] setAuthenticateHandler:(^(UIViewController* viewcontroller, NSError *error) {
+            if (viewcontroller != nil) {
+                [self.window.rootViewController presentViewController:viewcontroller animated:YES completion:nil];
+            } else if ([GKLocalPlayer localPlayer].authenticated) {
+                ;;
+            }
+        })];
+    } else {
+        // Gamekit login for ios 5
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+        [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
+#pragma GCC diagnostic warning "-Wdeprecated-declarations"
     }
     
     // Tapjoy
@@ -178,10 +200,6 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     [FBSession.activeSession closeAndClearTokenInformation];
 }
 
-/*
- * If we have a valid session at the time of openURL call, we handle
- * Facebook transitions by passing the url argument to handleOpenURL
- */
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -189,5 +207,4 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     // attempt to extract a token from the url
     return [FBSession.activeSession handleOpenURL:url];
 }
-
 @end

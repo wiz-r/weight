@@ -12,7 +12,6 @@
 extern NSString *const FBSessionStateChangedNotification;
 
 @class GraphViewController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GameKit/GameKit.h>
 #import "GADBannerView.h"
 
-@interface HomeViewController : UIViewController {
+@interface HomeViewController : UIViewController<GKLeaderboardViewControllerDelegate> {
     GADBannerView *bannerView_;
 }
 @end

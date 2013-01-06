@@ -80,4 +80,38 @@
     }
 }
 
+-(float) maxWeight
+{
+    NSMutableArray* array = [self array];
+    float max = 0.0f;
+    
+    for (int i = 0; i < array.count; i++) {
+        WeightData* data = [array objectAtIndex:i];
+        if (i == 0) {
+            max = data.weight;
+        } else {
+            max = MAX(data.weight, max);
+        }
+    }
+    
+    return max;
+}
+
+-(float) minWeight
+{
+    NSMutableArray* array = [self array];
+    float min = 0.0f;
+    
+    for (int i = 0; i < array.count; i++) {
+        WeightData* data = [array objectAtIndex:i];
+        if (i == 0) {
+            min = data.weight;
+        } else {
+            min = MIN(data.weight, min);
+        }
+    }
+    
+    return min;
+}
+
 @end
