@@ -52,7 +52,24 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     }
     
     // Gamecenter
-    [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
+    NSString *reqSysVer = @"6.0";
+    NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
+    if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending)
+    {
+        // Gamekit login for ios 6
+        [[GKLocalPlayer localPlayer] setAuthenticateHandler:(^(UIViewController* viewcontroller, NSError *error) {
+            if (viewcontroller != nil) {
+                [self.window.rootViewController presentViewController:viewcontroller animated:YES completion:nil];
+            } else if ([GKLocalPlayer localPlayer].authenticated) {
+                ;;
+            }
+        })];
+    } else {
+        // Gamekit login for ios 5
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+        [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
+#pragma GCC diagnostic warning "-Wdeprecated-declarations"
+    }
     
     // Tapjoy
     [TapjoyConnect requestTapjoyConnect:@"54488a08-b30c-47a6-955b-1c2a1c6950a8" secretKey:@"TZgK749ZhdV3rIxKCN8U"];

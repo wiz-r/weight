@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import <GameKit/GameKit.h>
-
 #import "HomeViewController.h"
 #import "InputViewController.h"
 
@@ -77,7 +75,7 @@
 
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [[self presentedViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
