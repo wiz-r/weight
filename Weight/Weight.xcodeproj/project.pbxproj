@@ -71,6 +71,8 @@
 		B0D438071695606400AE4BB7 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0D438061695606400AE4BB7 /* f_logo.png */; };
 		B0DB6367169865FD00CD4619 /* game-center-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0DB6366169865FD00CD4619 /* game-center-logo.png */; };
 		B0F14C4B167D664E000EF88C /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F14C4A167D664E000EF88C /* button_background.png */; };
+		C99ABD04169D1087002EE38A /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C99ABD02169D1087002EE38A /* twitter@2x.png */; };
+		C99ABD05169D1087002EE38A /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = C99ABD03169D1087002EE38A /* twitter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +258,8 @@
 		B0D438061695606400AE4BB7 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
 		B0DB6366169865FD00CD4619 /* game-center-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-center-logo.png"; sourceTree = "<group>"; };
 		B0F14C4A167D664E000EF88C /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background.png; sourceTree = "<group>"; };
+		C99ABD02169D1087002EE38A /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
+		C99ABD03169D1087002EE38A /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -539,6 +543,8 @@
 		B05FC457167469050082F59F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C99ABD02169D1087002EE38A /* twitter@2x.png */,
+				C99ABD03169D1087002EE38A /* twitter.png */,
 				B0DB6366169865FD00CD4619 /* game-center-logo.png */,
 				B0D438061695606400AE4BB7 /* f_logo.png */,
 				65583844167F371A006CD7C3 /* logo.png */,
@@ -681,6 +687,8 @@
 				B064852B169175220030C59F /* FacebookSDKResources.bundle in Resources */,
 				B0D438071695606400AE4BB7 /* f_logo.png in Resources */,
 				B0DB6367169865FD00CD4619 /* game-center-logo.png in Resources */,
+				C99ABD04169D1087002EE38A /* twitter@2x.png in Resources */,
+				C99ABD05169D1087002EE38A /* twitter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

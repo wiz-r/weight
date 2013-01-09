@@ -10,6 +10,7 @@
 #import "WeightData.h"
 #import "InputViewController.h"
 #import "WeightCollection.h"
+#import <Twitter/Twitter.h>
 
 #import "Flurry.h"
 
@@ -39,6 +40,7 @@
     [super viewDidLoad];
     [self drawGraph];
     [Flurry logEvent:@"Graph_View"];
+    self.tweetButton.hidden = NSClassFromString(@"TWTweetComposeViewController") == nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -194,4 +196,17 @@
     }
     [self drawGraph];
 }
+
+- (IBAction)tweetButtonTapped:(id)sender {
+    Class TWTweetComposeViewController = NSClassFromString(@"TWTweetComposeViewController");
+    if (TWTweetComposeViewController) {
+        float weight = ((WeightData*)[[self.data sortedArrayUsingComparator:^NSComparisonResult(WeightData* obj1, WeightData* obj2) {
+          return [obj1.date compare:obj2.date];
+        }] lastObject]).weight;
+        id vc = [[TWTweetComposeViewController alloc] init];
+        [vc setInitialText:[NSString stringWithFormat:@"My current weight is %.1fkg #weightlogger", weight]];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
+
 @end

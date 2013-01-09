@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import <GameKit/GameKit.h>
+#import <Twitter/Twitter.h>
 
 #import "HomeViewController.h"
 #import "GraphViewController.h"
@@ -76,7 +77,11 @@ NSString *const FBSessionStateChangedNotification = @"com.wiz-r.Weight:FBSession
     
     NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(inputViewClosedEventReceived:) name:INPUT_CLOSE_NOTIFICATION_NAME object:nil];
-    
+  
+    // Load Twitter framework dynamically
+    NSString* frameworkPath = [[NSBundle bundleWithIdentifier:@"com.apple.UIKit"].bundlePath stringByAppendingString:@"/../Twitter.framework"];
+    [[NSBundle bundleWithPath:frameworkPath] load];
+  
     return YES;
 }
 
