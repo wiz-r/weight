@@ -80,34 +80,42 @@
     }
 }
 
--(float) maxWeight
+-(float) maxWeightWithPeriod:(int)days
 {
     NSMutableArray* array = [self array];
     float max = 0.0f;
+    NSDate* now = [NSDate date];
+    NSTimeInterval interval = days * 24.0f * 60.0f * 60.0f;
     
     for (int i = 0; i < array.count; i++) {
         WeightData* data = [array objectAtIndex:i];
-        if (i == 0) {
-            max = data.weight;
-        } else {
-            max = MAX(data.weight, max);
+        if ([now timeIntervalSinceDate:data.date] <= interval) {
+            if (i == 0) {
+                max = data.weight;
+            } else {
+                max = MAX(data.weight, max);
+            }
         }
     }
     
     return max;
 }
 
--(float) minWeight
+-(float) minWeightWithPeriod:(int)days
 {
     NSMutableArray* array = [self array];
     float min = 0.0f;
+    NSDate* now = [NSDate date];
+    NSTimeInterval interval = days * 24.0f * 60.0f * 60.0f;
     
     for (int i = 0; i < array.count; i++) {
         WeightData* data = [array objectAtIndex:i];
-        if (i == 0) {
-            min = data.weight;
-        } else {
-            min = MIN(data.weight, min);
+        if ([now timeIntervalSinceDate:data.date] <= interval) {
+            if (i == 0) {
+                min = data.weight;
+            } else {
+                min = MIN(data.weight, min);
+            }
         }
     }
     

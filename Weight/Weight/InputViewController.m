@@ -114,7 +114,7 @@
     }
     
     // post total score to Game Center
-    float maxWeight = [collection maxWeight];
+    float maxWeight = [collection maxWeightWithPeriod:365*100];
     float diffTotal = data.weight - maxWeight;
     GKScore *scoreTotal = [[GKScore alloc] initWithCategory:@"total"];
     scoreTotal.value = diffTotal * 100.0f;

@@ -80,8 +80,8 @@
     // data
     NSTimeInterval oneDay = 24.0f * 60.0f * 60.0f;
     
-    float minWeight = [[[WeightCollection alloc] init] minWeight];
-    float maxWeight = [[[WeightCollection alloc] init] maxWeight];
+    float minWeight = [[[WeightCollection alloc] init] minWeightWithPeriod:self.xDays];
+    float maxWeight = [[[WeightCollection alloc] init] maxWeightWithPeriod:self.xDays];
     float minY = minWeight - 0.2f;
     float maxY = maxWeight + 0.2f;
 	

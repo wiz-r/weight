@@ -18,6 +18,6 @@
 -(void) save;
 -(NSMutableArray*) array;
 -(WeightData*) latest;
--(float) maxWeight;
--(float) minWeight;
+-(float) maxWeightWithPeriod:(int)days;
+-(float) minWeightWithPeriod:(int)days;
 @end
