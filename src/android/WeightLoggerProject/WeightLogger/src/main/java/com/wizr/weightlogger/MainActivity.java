@@ -115,11 +115,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a DummySectionFragment (defined as a static inner class
-            // below) with the page number as its lone argument.
+            if (position < 0 || position > (items.length - 1)) {
+                throw new IllegalArgumentException();
+            }
+
             Fragment fragment = items[position];
-            /*
+           /*
             Bundle args = new Bundle();
             args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
             fragment.setArguments(args);
