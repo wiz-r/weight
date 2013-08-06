@@ -15,5 +15,5 @@
             android:id="@+id/imageView"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="22dp"
-            android:background="@drawable/logo"/>
+            android:src="@drawable/logo"/>
 </RelativeLayout>
