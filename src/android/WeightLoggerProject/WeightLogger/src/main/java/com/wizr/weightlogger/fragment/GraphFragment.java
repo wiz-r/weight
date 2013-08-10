@@ -7,9 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
 import com.androidplot.xy.XYPlot;
+import com.androidplot.xy.XYStepMode;
 import com.wizr.weightlogger.R;
 import com.wizr.weightlogger.graph.DataSource;
 import com.wizr.weightlogger.graph.GraphSeries;
@@ -36,14 +38,23 @@ public class GraphFragment extends Fragment {
 
         GraphSeries series = new GraphSeries(dataSource);
 
-        plot.addSeries(series, new LineAndPointFormatter(
-                Color.rgb(0, 0, 0), null, Color.rgb(0, 80, 0), new PointLabelFormatter()
-        ));
-
         LineAndPointFormatter f1 = new LineAndPointFormatter(
-                Color.rgb(0, 0, 200), null, Color.rgb(0, 0, 80), new PointLabelFormatter()
+                Color.rgb(0, 0, 200), Color.rgb(80, 0, 0), 0, null
         );
-        f1.getFillPaint().setAlpha(220);
+        f1.getFillPaint().setAlpha(0);
+        f1.getVertexPaint().setStrokeWidth(10);
+
+        plot.addSeries(series, f1);
+
+        /*
+        plot.setDomainStepMode(XYStepMode.SUBDIVIDE);
+        plot.setDomainStepValue(series.size());
+
+        plot.setTicksPerDomainLabel(5);
+        plot.setTicksPerRangeLabel(3);
+        */
+
+        plot.setRangeBoundaries(30, 100, BoundaryMode.FIXED);
 
         return rootView;
     }

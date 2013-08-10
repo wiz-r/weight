@@ -9,6 +9,6 @@ public class DataSource {
     }
 
     public Number getData(int index) {
-        return 0.5;
+        return 20+index;
     }
 }
