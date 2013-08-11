@@ -31,9 +31,11 @@ import java.util.Date;
  */
 public class GraphFragment extends Fragment {
     private static final float margin = 0.2f;
-    private static final long oneDay = 60 * 60 * 24;
+    private static final long oneDay = 60 * 60 * 24 * 1000;
     private XYPlot plot;
     private DataSource dataSource;
+    private WeightDataCollection collection;
+    private GraphSeries series;
 
     public GraphFragment() {
     }
@@ -42,13 +44,24 @@ public class GraphFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_graph, container, false);
 
-        WeightDataCollection collection = WeightDataCollection.getCollection(rootView.getContext());
-        dataSource = new DataSource(collection);
-
         plot = (XYPlot)rootView.findViewById(R.id.dynamicPlot);
         plot.getGraphWidget().setDomainValueFormat(new DecimalFormat("0"));
+        collection = WeightDataCollection.getCollection(rootView.getContext());
 
-        GraphSeries series = new GraphSeries(dataSource);
+        setupGraph();
+
+        return rootView;
+    }
+
+    public void refreshGraph() {
+        plot.removeSeries(series);
+        setupGraph();
+        plot.redraw();
+    }
+
+    private void setupGraph() {
+        dataSource = new DataSource(collection);
+        series = new GraphSeries(dataSource);
 
         LineAndPointFormatter f1 = new LineAndPointFormatter(
                 Color.rgb(0, 0, 200), Color.rgb(80, 0, 0), 0, null
@@ -63,7 +76,7 @@ public class GraphFragment extends Fragment {
             private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd");
             @Override
             public StringBuffer format(Object o, StringBuffer stringBuffer, FieldPosition fieldPosition) {
-                long timestamp = ((Number) o).longValue() * 1000;
+                long timestamp = ((Number) o).longValue();
                 Date date = new Date(timestamp);
                 return dateFormat.format(date, stringBuffer, fieldPosition);
             }
@@ -85,7 +98,5 @@ public class GraphFragment extends Fragment {
         float maxY = dataSource.getMaxWeight() + margin;
         float minY = dataSource.getMinWeight() - margin;
         plot.setRangeBoundaries(minY, maxY, BoundaryMode.FIXED);
-
-        return rootView;
     }
 }

@@ -102,14 +102,21 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
-                InputDialogFragment dialog = new InputDialogFragment();
-                dialog.show(getSupportFragmentManager(),"");
-                return true;
-            case R.id.action_settings:
+                showInputDialog();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void showInputDialog() {
+        InputDialogFragment dialog = new InputDialogFragment();
+        dialog.show(getSupportFragmentManager(),"");
+    }
+
+    public void refreshGraphFragment(){
+        ((GraphFragment)mSectionsPagerAdapter.getGraphFragment()).refreshGraph();
+        mViewPager.setCurrentItem(mSectionsPagerAdapter.getGraphPageIndex());
     }
 
     /**
@@ -117,9 +124,20 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-        private Fragment[] items = {new MainFragment(), new GraphFragment()};
+        private Fragment mainFragment = new MainFragment();
+        private Fragment graphFragment = new GraphFragment();
+        private Fragment[] items = {mainFragment, graphFragment};
+
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+        }
+
+        public Fragment getGraphFragment() {
+            return graphFragment;
+        }
+
+        public int getGraphPageIndex() {
+            return 1;
         }
 
         @Override
@@ -147,11 +165,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return getString(R.string.title_home).toUpperCase();
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+                    return getString(R.string.title_graph).toUpperCase();
             }
             return null;
         }

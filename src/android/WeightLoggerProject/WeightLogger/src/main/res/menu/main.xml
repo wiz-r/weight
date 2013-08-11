@@ -3,8 +3,4 @@
           android:icon="@android:drawable/ic_menu_add"
           android:orderInCategory="100"
           android:showAsAction="ifRoom" />
-    <item android:id="@+id/action_settings"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:orderInCategory="100"
-        android:showAsAction="ifRoom" />
 </menu>

@@ -1,6 +1,7 @@
 package com.wizr.weightlogger.fragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.wizr.weightlogger.MainActivity;
 import com.wizr.weightlogger.R;
 import com.wizr.weightlogger.data.WeightData;
 import com.wizr.weightlogger.data.WeightDataCollection;
@@ -55,6 +57,9 @@ public class InputDialogFragment extends DialogFragment {
                     WeightDataCollection collection = WeightDataCollection.getCollection(view.getContext());
                     collection.add(weightData);
                     collection.save();
+
+                    MainActivity activity = (MainActivity)getActivity();
+                    activity.refreshGraphFragment();
                 }
 
                 dismiss();
