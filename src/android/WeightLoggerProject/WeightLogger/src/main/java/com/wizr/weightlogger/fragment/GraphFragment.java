@@ -64,7 +64,7 @@ public class GraphFragment extends Fragment {
         series = new GraphSeries(dataSource);
 
         LineAndPointFormatter f1 = new LineAndPointFormatter(
-                Color.rgb(0, 0, 200), Color.rgb(80, 0, 0), 0, null
+                Color.rgb(0, 0, 200), Color.rgb(200, 0, 0), 0, null
         );
         f1.getFillPaint().setAlpha(0);
         f1.getVertexPaint().setStrokeWidth(10);
