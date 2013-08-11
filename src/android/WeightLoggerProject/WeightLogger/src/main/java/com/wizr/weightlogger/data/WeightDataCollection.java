@@ -19,16 +19,20 @@ import java.util.Map;
 public class WeightDataCollection {
     private static final String SP_KEY = "weight_data";
 
-    private HashMap<Long, WeightData> data = new HashMap<Long, WeightData>(){{
-        put(1375887600L, new WeightData(1375887600L, 75.1F));
-        put(1375974000L, new WeightData(1375974000L, 75.0F));
-        put(1376060400L, new WeightData(1376060400L, 74.8F));
-        put(1376146800L, new WeightData(1376146800L, 74.2F));
-    }};
-    //private HashMap<Long, WeightData> data = new HashMap<Long, WeightData>();
+    private HashMap<Long, WeightData> data = new HashMap<Long, WeightData>();
     private Context context;
+    private static WeightDataCollection collection = null;
 
-    public WeightDataCollection(Context context)
+    public static WeightDataCollection getCollection(Context context) {
+        if (collection == null) {
+            collection = new WeightDataCollection(context);
+            collection.load();
+        }
+
+        return collection;
+    }
+
+    private WeightDataCollection(Context context)
     {
         this.context = context;
     }

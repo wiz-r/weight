@@ -42,8 +42,7 @@ public class GraphFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_graph, container, false);
 
-        WeightDataCollection collection = new WeightDataCollection(rootView.getContext());
-        //collection.load();
+        WeightDataCollection collection = WeightDataCollection.getCollection(rootView.getContext());
         dataSource = new DataSource(collection);
 
         plot = (XYPlot)rootView.findViewById(R.id.dynamicPlot);

@@ -17,27 +17,28 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/weight_text_input"
             android:layout_gravity="left|center_vertical"
-            android:text="dd"/>
+            android:hint="00.0"/>
 
     <DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/datePicker"
+            android:calendarViewShown="false"
             android:layout_gravity="left|center_vertical"/>
 
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="OK"
-            android:id="@+id/button"
+            android:id="@+id/dialog_ok_button"
             />
 
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:id="@+id/button2"
+            android:id="@+id/dialog_cancel_button"
             />
 </LinearLayout>
