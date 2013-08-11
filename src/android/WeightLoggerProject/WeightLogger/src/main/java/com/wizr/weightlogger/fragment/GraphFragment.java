@@ -15,6 +15,7 @@ import com.androidplot.xy.PointLabelFormatter;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYStepMode;
 import com.wizr.weightlogger.R;
+import com.wizr.weightlogger.data.WeightDataCollection;
 import com.wizr.weightlogger.graph.DataSource;
 import com.wizr.weightlogger.graph.GraphSeries;
 
@@ -35,12 +36,15 @@ public class GraphFragment extends Fragment {
     private DataSource dataSource;
 
     public GraphFragment() {
-        dataSource = new DataSource(); // temp
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_graph, container, false);
+
+        WeightDataCollection collection = new WeightDataCollection(rootView.getContext());
+        //collection.load();
+        dataSource = new DataSource(collection);
 
         plot = (XYPlot)rootView.findViewById(R.id.dynamicPlot);
         plot.getGraphWidget().setDomainValueFormat(new DecimalFormat("0"));

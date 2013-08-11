@@ -1,6 +1,7 @@
 package com.wizr.weightlogger.graph;
 
 import com.wizr.weightlogger.data.WeightData;
+import com.wizr.weightlogger.data.WeightDataCollection;
 
 import java.util.HashMap;
 
@@ -8,12 +9,12 @@ import java.util.HashMap;
  * Created by takuya.watabe on 8/6/13.
  */
 public class DataSource {
-    private WeightData[] data = {
-            new WeightData(1375887600L, 75.1F),
-            new WeightData(1375974000L, 75.0F),
-            new WeightData(1376060400L, 74.8F),
-            new WeightData(1376146800L, 74.2F),
-    }; // tmp
+    private WeightData[] data;
+
+    public DataSource(WeightDataCollection collection) {
+        data = collection.getArray();
+    }
+
     public int getSize() {
         return data.length;
     }
