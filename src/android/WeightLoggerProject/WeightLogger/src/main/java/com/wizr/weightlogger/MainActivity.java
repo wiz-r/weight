@@ -13,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.flurry.android.FlurryAgent;
 import com.wizr.weightlogger.fragment.GraphFragment;
 import com.wizr.weightlogger.fragment.InputDialogFragment;
 import com.wizr.weightlogger.fragment.MainFragment;
@@ -28,6 +29,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     SectionsPagerAdapter mSectionsPagerAdapter;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.onStartSession(this, "MMNP2W93FP5D29WJXK5J");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.onEndSession(this);
+    }
 
     /**
      * The {@link ViewPager} that will host the section contents.
