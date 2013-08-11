@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.androidplot.ui.SizeLayoutType;
+import com.androidplot.ui.SizeMetrics;
 import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -17,11 +19,18 @@ import com.wizr.weightlogger.graph.DataSource;
 import com.wizr.weightlogger.graph.GraphSeries;
 
 import java.text.DecimalFormat;
+import java.text.FieldPosition;
+import java.text.Format;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by takuya.watabe on 8/6/13.
  */
 public class GraphFragment extends Fragment {
+    private static final float margin = 0.2f;
+    private static final long oneDay = 60 * 60 * 24;
     private XYPlot plot;
     private DataSource dataSource;
 
@@ -46,15 +55,33 @@ public class GraphFragment extends Fragment {
 
         plot.addSeries(series, f1);
 
-        /*
-        plot.setDomainStepMode(XYStepMode.SUBDIVIDE);
-        plot.setDomainStepValue(series.size());
+        // X Axis
+        plot.setDomainValueFormat(new Format() {
+            private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd");
+            @Override
+            public StringBuffer format(Object o, StringBuffer stringBuffer, FieldPosition fieldPosition) {
+                long timestamp = ((Number) o).longValue() * 1000;
+                Date date = new Date(timestamp);
+                return dateFormat.format(date, stringBuffer, fieldPosition);
+            }
 
-        plot.setTicksPerDomainLabel(5);
-        plot.setTicksPerRangeLabel(3);
-        */
+            @Override
+            public Object parseObject(String s, ParsePosition parsePosition) {
+                return null;
+            }
+        });
 
-        plot.setRangeBoundaries(30, 100, BoundaryMode.FIXED);
+        plot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, oneDay);
+
+        long latest = dataSource.getMaxTimestamp();
+        long maxX = latest + oneDay;
+        long minX = maxX - 7 * oneDay;
+        plot.setDomainBoundaries(minX, maxX, BoundaryMode.FIXED);
+
+        // Y Axis
+        float maxY = dataSource.getMaxWeight() + margin;
+        float minY = dataSource.getMinWeight() - margin;
+        plot.setRangeBoundaries(minY, maxY, BoundaryMode.FIXED);
 
         return rootView;
     }

@@ -18,16 +18,16 @@ public class GraphSeries implements XYSeries {
 
     @Override
     public Number getX(int i) {
-        return i;
+        return dataSource.getData(i).getTimestamp();
     }
 
     @Override
     public Number getY(int i) {
-        return dataSource.getData(i);
+        return dataSource.getData(i).getWeight();
     }
 
     @Override
     public String getTitle() {
-        return "sample";
+        return "Weight";
     }
 }
