@@ -16,6 +16,8 @@ import net.hockeyapp.android.CrashManager;
 import net.hockeyapp.android.UpdateManager;
 
 import com.flurry.android.FlurryAgent;
+import com.growthpush.GrowthPush;
+import com.growthpush.model.Environment;
 import com.wizr.weightlogger.fragment.GraphFragment;
 import com.wizr.weightlogger.fragment.InputDialogFragment;
 import com.wizr.weightlogger.fragment.MainFragment;
@@ -89,6 +91,17 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                             .setText(mSectionsPagerAdapter.getPageTitle(i))
                             .setTabListener(this));
         }
+
+        // Growth Push
+        GrowthPush.getInstance().initialize(
+                getApplicationContext(),
+                101,
+                "efM5GGlxXyXPNmf91x6nAsHoMSiEDIZP",
+                BuildConfig.DEBUG ? Environment.development : Environment.production,
+                true
+        ).register("flowing-diode-437");
+        GrowthPush.getInstance().trackEvent("Launch");
+        GrowthPush.getInstance().setDeviceTags();
     }
 
     @Override
