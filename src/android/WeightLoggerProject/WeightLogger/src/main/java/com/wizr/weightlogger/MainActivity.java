@@ -94,12 +94,13 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         // Growth Push
         GrowthPush.getInstance().initialize(
-                getApplicationContext(),
+                //getApplicationContext(),
+                this,
                 101,
                 "efM5GGlxXyXPNmf91x6nAsHoMSiEDIZP",
                 BuildConfig.DEBUG ? Environment.development : Environment.production,
                 true
-        ).register("flowing-diode-437");
+        ).register("608880364372");
         GrowthPush.getInstance().trackEvent("Launch");
         GrowthPush.getInstance().setDeviceTags();
     }

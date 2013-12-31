@@ -8,9 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
 import com.wizr.weightlogger.MainActivity;
 import com.wizr.weightlogger.R;
 
@@ -18,7 +15,7 @@ import com.wizr.weightlogger.R;
  * Created by takuya.watabe on 8/6/13.
  */
 public class MainFragment extends Fragment {
-    private AdView adView;
+    //private AdView adView;
 
     public MainFragment() {
     }
@@ -37,19 +34,21 @@ public class MainFragment extends Fragment {
         });
 
         // ad
+        /*
         adView = new AdView(getActivity(), AdSize.BANNER, "a1520763cc9918b");
         RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         p.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, rootView.getId());
         p.addRule(RelativeLayout.CENTER_HORIZONTAL, rootView.getId());
         layout.addView(adView, p);
         adView.loadAd(new AdRequest());
+        */
 
         return rootView;
     }
 
     @Override
     public void onDestroy() {
-        adView.destroy();
+        //adView.destroy();
         super.onDestroy();
     }
 }
