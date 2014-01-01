@@ -10,12 +10,13 @@ import android.widget.RelativeLayout;
 
 import com.wizr.weightlogger.MainActivity;
 import com.wizr.weightlogger.R;
+import com.google.android.gms.ads.*;
 
 /**
  * Created by takuya.watabe on 8/6/13.
  */
 public class MainFragment extends Fragment {
-    //private AdView adView;
+    private AdView adView;
 
     public MainFragment() {
     }
@@ -34,21 +35,39 @@ public class MainFragment extends Fragment {
         });
 
         // ad
-        /*
-        adView = new AdView(getActivity(), AdSize.BANNER, "a1520763cc9918b");
+        adView = new AdView(getActivity());
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-6380416780677658/7170803781");
         RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         p.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, rootView.getId());
         p.addRule(RelativeLayout.CENTER_HORIZONTAL, rootView.getId());
         layout.addView(adView, p);
-        adView.loadAd(new AdRequest());
-        */
+        //layout.addView(adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        try {
+        adView.loadAd(adRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return rootView;
     }
 
     @Override
     public void onDestroy() {
-        //adView.destroy();
+        adView.destroy();
         super.onDestroy();
+    }
+
+    @Override
+    public void onPause() {
+        adView.pause();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adView.resume();
     }
 }
