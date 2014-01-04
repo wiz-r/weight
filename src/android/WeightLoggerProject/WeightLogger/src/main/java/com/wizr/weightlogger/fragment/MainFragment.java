@@ -42,13 +42,8 @@ public class MainFragment extends Fragment {
         p.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, rootView.getId());
         p.addRule(RelativeLayout.CENTER_HORIZONTAL, rootView.getId());
         layout.addView(adView, p);
-        //layout.addView(adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        try {
         adView.loadAd(adRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         return rootView;
     }
