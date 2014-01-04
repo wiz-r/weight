@@ -4,6 +4,11 @@ import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -17,6 +22,7 @@ import net.hockeyapp.android.UpdateManager;
 
 import com.flurry.android.FlurryAgent;
 import com.growthpush.GrowthPush;
+import com.growthpush.handler.ReceiveHandler;
 import com.growthpush.model.Environment;
 import com.wizr.weightlogger.fragment.GraphFragment;
 import com.wizr.weightlogger.fragment.InputDialogFragment;
@@ -103,6 +109,26 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         ).register("608880364372");
         GrowthPush.getInstance().trackEvent("Launch");
         GrowthPush.getInstance().setDeviceTags();
+
+        GrowthPush.getInstance().setReceiveHandler(new ReceiveHandler() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Notification notification = new Notification.BigPictureStyle(
+                    new Notification.Builder(context)
+                        .setContentTitle("Notify TItle")
+                        .setContentText("sub title")
+                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setLargeIcon(
+                                BitmapFactory.decodeResource(getResources(), R.drawable.cream)
+
+                ).bigPicture(
+                    BitmapFactory.decodeResource(getResources(), R.drawable.logo)
+                ).build();
+
+                NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+                nm.notify(0x01, notification);
+            }
+        });
     }
 
     @Override
