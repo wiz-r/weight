@@ -110,6 +110,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         GrowthPush.getInstance().trackEvent("Launch");
         GrowthPush.getInstance().setDeviceTags();
 
+        /*
         GrowthPush.getInstance().setReceiveHandler(new ReceiveHandler() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -120,7 +121,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                         .setSmallIcon(R.drawable.ic_launcher)
                         .setLargeIcon(
                                 BitmapFactory.decodeResource(getResources(), R.drawable.cream)
-
+                        )
                 ).bigPicture(
                     BitmapFactory.decodeResource(getResources(), R.drawable.logo)
                 ).build();
@@ -129,6 +130,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 nm.notify(0x01, notification);
             }
         });
+        */
     }
 
     @Override
